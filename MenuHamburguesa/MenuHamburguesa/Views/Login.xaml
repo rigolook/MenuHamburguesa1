@@ -1,12 +1,49 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MenuHamburguesa.Views.Login">
+             x:Class="MenuHamburguesa.Views.Login"             
+             Background="#112B47">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+
+        <StackLayout Padding="48,0" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+
+            <Label Text="Login" FontSize="80" HorizontalOptions="Center" 
+                     />
+            <Image Source="signodeviento.png" WidthRequest="180" HeightRequest="180"/>
+
+
+            <Label Text="Mejora tu entorno" HorizontalOptions="Center"
+                   />
+
+            <Label Text="USUARIO" FontSize="25" HorizontalOptions="Center"
+                   Margin="10,20,10,10"/>
+            <Entry Placeholder="jerh" Background="white"
+                   Margin="10,20,10,10"/>
+
+            <Label Text="CONTRASEÑA" FontSize="25" HorizontalOptions="Center"
+                   Margin="10,20,10,10"/>
+            <Entry  Placeholder="*******" Background="white" IsPassword="True"
+                    Margin="10,20,10,10"/>
+
+            <Button Text="Iniciar" Command="{Binding Iniciarcommand}"
+                    Margin="60,20,60,10"
+                    CornerRadius="18"
+                    HeightRequest="60"/>
+
+            <Label HorizontalOptions="Center">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="¿Quieres registrarte? "/>
+                        <Span Text="Registrarte" FontAttributes="Bold" TextDecorations="Underline">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Registrarcommand}"/>
+                            </Span.GestureRecognizers>
+                        </Span>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
         </StackLayout>
+
     </ContentPage.Content>
 </ContentPage>
