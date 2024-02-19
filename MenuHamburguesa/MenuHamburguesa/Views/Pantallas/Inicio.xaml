@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MenuHamburguesa.Inicio"
+             Title="Inicio">
+   <StackLayout Padding="10">
+
+        <!-- Gráfica 1 -->
+        <Label Text="Gráfica 1" FontSize="Title" />
+        <Frame BorderColor="Black" Padding="5">
+            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Spacing="20">
+                <Label Text="Air Quality:" FontAttributes="Bold" />
+                <Label x:Name="airQualityLabel" FontSize="Large" />
+            </StackLayout>
+        </Frame>
+
+        <!-- Gráfica 2 -->
+        <Label Text="Gráfica 2" FontSize="Title" />
+        <Frame BorderColor="Black" Padding="5">
+            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Spacing="20">
+                <Label Text="Temperature:" FontAttributes="Bold" />
+                <Label x:Name="temperatureLabel" FontSize="Large" />
+            </StackLayout>
+        </Frame>
+
+        <!-- Gráfica 3 -->
+        <Label Text="Gráfica 3" FontSize="Title" />
+        <Frame BorderColor="Black" Padding="5">
+            
+        </Frame>
+
+    </StackLayout>
+</ContentPage>

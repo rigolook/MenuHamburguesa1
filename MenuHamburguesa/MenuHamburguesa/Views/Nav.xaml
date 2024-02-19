@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MenuHamburguesa.Nav"
+             Title="Nav">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".5*"/>
+            <ColumnDefinition Width=".5*"/>
+        </Grid.ColumnDefinitions>
+        
+        <Button x:Name="inicio" Text="Inicio" FontSize="20" Grid.Column="0" Grid.Row="0" Clicked="GoInicio"/>
+        <Button x:Name="monitoreo" Text="Monitoreo" FontSize="20" Grid.Column="0" Grid.Row="1" Clicked="GoMonitoreo"/>
+        <Button x:Name="reigstro" Text="Registro" FontSize="20" Grid.Column="0" Grid.Row="2" Clicked="GoRegistro"/>
+        <Button x:Name="almacen" Text="Almacen" FontSize="20" Grid.Column="0" Grid.Row="3" Clicked="GoAlmacen"/>
+        <Button x:Name="cerrarsesior" Text="Cerrar Sesión" FontSize="20" Grid.Column="0" Grid.Row="4"/>
+   
+
+    </Grid>
+</ContentPage>
