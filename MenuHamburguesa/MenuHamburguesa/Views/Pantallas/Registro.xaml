@@ -10,9 +10,7 @@
                     <Label Text="Historial de Registros:" FontSize="Title" TextColor="Black" HorizontalOptions="Center"/>
                 </Frame>
                
-                <!--Aqui la vista de los registros-->
-                <Grid Margin="0,5,0,0" >
-                    <Frame Grid.Row="1" WidthRequest="250"
+                <!--Aqui la vista de los registros <Frame Grid.Row="1" WidthRequest="250"
                                     HorizontalOptions="Center"
                                     CornerRadius="15"
                                     Margin="0,-28,0,10"
@@ -31,7 +29,9 @@
                             <Label Text="EMP:" HorizontalOptions="Center" VerticalOptions="End" FontAttributes="Bold,Italic" FontSize="20"/>
                             <Label Text="{Binding }" HorizontalOptions="Center" VerticalOptions="End" FontAttributes="Bold"/>
                         </StackLayout>
-                    </Frame>
+                    </Frame>-->
+                <Grid Margin="0,5,0,0" >
+                    
                     <!--ItemsSource="{Binding }" esto es para ya la base de datos-->
                     <CollectionView BackgroundColor="PaleGoldenrod"
                              Grid.Row="0" 
