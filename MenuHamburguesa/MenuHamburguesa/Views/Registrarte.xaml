@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AirePuro.View.Registrarte"          
+             Background="#112B47">
+    <ContentPage.Content>
+
+        <StackLayout Padding="48,0" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+
+            <Image Source="signodeviento.png" WidthRequest="160" HeightRequest="160"/>
+            <Label Text="Registrar" FontSize="40" HorizontalOptions="Center" />
+
+
+            <Label Text="USUARIO" FontSize="25" HorizontalOptions="Center"
+                   Margin="0,20,0,0"/>
+            <Entry Placeholder="jerh" Background="white"
+                   Margin="10,0,10,0"/>
+
+            <Label Text="CONTRASEÑA" FontSize="25" HorizontalOptions="Center"
+                   Margin="10,0,10,0"/>
+            <Entry  Placeholder="*******" Background="white" IsPassword="True"
+                    Margin="10,0,10,0"/>
+
+            <Label Text="CONFIRMAR" FontSize="25" HorizontalOptions="Center"/>
+            <Entry  Placeholder="*******" Background="white" IsPassword="True"
+                   Margin="10,0,10,0"/>
+
+
+            <Label Text="NUMERO" FontSize="25" HorizontalOptions="Center" Margin="10,20,10,10"/>
+            <Entry Placeholder="numero" Background="white"
+                   Margin="10,0,10,0" Keyboard="Numeric" />
+
+            <Button Text="Iniciar" Command="{Binding Registrarcommand}" Margin="60,20,60,10"
+                    CornerRadius="18" HeightRequest="60"/>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
