@@ -34,10 +34,6 @@ namespace MenuHamburguesa
             App.MasterDet.IsPresented = false;
             await App.MasterDet.Detail.Navigation.PushAsync(new Registro());
         }
-        private async void GoAlmacen(object sender, EventArgs e)
-        {
-            App.MasterDet.IsPresented = false;
-            await App.MasterDet.Detail.Navigation.PushAsync(new Almacen());
-        }
+        
     }
 }

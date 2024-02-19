@@ -5,16 +5,37 @@
              Title="Registro">
     <Grid>
         <ScrollView>
-            <StackLayout>
+            <StackLayout BackgroundColor="#b4ff9a">
                 <Frame BorderColor="Black">
-                    <Label Text="Historial" FontSize="Title" TextColor="Black" HorizontalOptions="Center"/>
+                    <Label Text="Historial de Registros:" FontSize="Title" TextColor="Black" HorizontalOptions="Center"/>
                 </Frame>
-                <Button Text="AGREGAR" CornerRadius="70" HeightRequest="100" WidthRequest="100" HorizontalOptions="End" BackgroundColor="#9FF9A1"/>
+               
                 <!--Aqui la vista de los registros-->
                 <Grid Margin="0,5,0,0" >
+                    <Frame Grid.Row="1" WidthRequest="250"
+                                    HorizontalOptions="Center"
+                                    CornerRadius="15"
+                                    Margin="0,-28,0,10"
+                                    BorderColor="#ADF7B6"
+                                    BackgroundColor="#FFC09F">
+                        <StackLayout Margin="0,30,0,0">
+                            <Label Text="Fecha y hora:" HorizontalOptions="Center" VerticalOptions="Start" FontAttributes="Bold,Italic" FontSize="20"/>
+                            <Label Text="{Binding }" HorizontalOptions="Center" Margin="4" VerticalOptions="Start" FontAttributes="Bold"/>
+
+                            <Label Text="Oxigeno:" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold,Italic" FontSize="20"/>
+                            <Label Text="{Binding }" Margin="4" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold"/>
+
+                            <Label Text="RPM:" HorizontalOptions="Center" VerticalOptions="End" FontAttributes="Bold,Italic" FontSize="20"/>
+                            <Label Text="{Binding }" HorizontalOptions="Center" VerticalOptions="End" FontAttributes="Bold"/>
+
+                            <Label Text="EMP:" HorizontalOptions="Center" VerticalOptions="End" FontAttributes="Bold,Italic" FontSize="20"/>
+                            <Label Text="{Binding }" HorizontalOptions="Center" VerticalOptions="End" FontAttributes="Bold"/>
+                        </StackLayout>
+                    </Frame>
+                    <!--ItemsSource="{Binding }" esto es para ya la base de datos-->
                     <CollectionView BackgroundColor="PaleGoldenrod"
                              Grid.Row="0" 
-                             ItemsSource="{Binding }" Margin="10,0,10,0">
+                              Margin="10,0,10,0">
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
                                 <Grid RowDefinitions="30,*"
@@ -26,17 +47,23 @@
                                     BorderColor="#ADF7B6"
                                     BackgroundColor="#FFC09F">
                                         <StackLayout Margin="0,30,0,0">
-                                            <Label Text="Fecha y hora:" HorizontalOptions="Center" VerticalOptions="Start" FontAttributes="Bold,Italic" FontSize="20"/>
-                                            <Label Text="{Binding }" HorizontalOptions="Center" Margin="4" VerticalOptions="Start" FontAttributes="Bold"/>
+                                            <Label Text="Ubicacion:" HorizontalOptions="Center" VerticalOptions="Start" FontAttributes="Bold,Italic" FontSize="20"/>
+                                            <Label Text="Sala" HorizontalOptions="Center" Margin="4" VerticalOptions="Start" FontAttributes="Bold"/>
 
-                                            <Label Text="Oxigeno:" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold,Italic" FontSize="20"/>
-                                            <Label Text="{Binding }" Margin="4" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold"/>
+                                            <Label Text="Fecha y hora:" HorizontalOptions="Center" VerticalOptions="Start" FontAttributes="Bold,Italic" FontSize="20"/>
+                                            <Label Text="20/02/2024 13:00" HorizontalOptions="Center" Margin="4" VerticalOptions="Start" FontAttributes="Bold"/>
+                                            
+                                            <Label Text="Temperatura:" HorizontalOptions="Center" VerticalOptions="Start" FontAttributes="Bold,Italic" FontSize="20"/>
+                                            <Label Text="25°" HorizontalOptions="Center" Margin="4" VerticalOptions="Start" FontAttributes="Bold"/>
+
+                                            <Label Text="Nombre de gas detectado:" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold,Italic" FontSize="20"/>
+                                            <Label Text="Oxigeno" Margin="4" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold"/>
+
+                                            <Label Text="gas detectado:" HorizontalOptions="Center" VerticalOptions="End" FontAttributes="Bold,Italic" FontSize="20"/>
+                                            <Label Text="No" HorizontalOptions="Center" VerticalOptions="End" FontAttributes="Bold"/>
 
                                             <Label Text="RPM:" HorizontalOptions="Center" VerticalOptions="End" FontAttributes="Bold,Italic" FontSize="20"/>
-                                            <Label Text="{Binding }" HorizontalOptions="Center" VerticalOptions="End" FontAttributes="Bold"/>
-
-                                            <Label Text="EMP:" HorizontalOptions="Center" VerticalOptions="End" FontAttributes="Bold,Italic" FontSize="20"/>
-                                            <Label Text="{Binding }" HorizontalOptions="Center" VerticalOptions="End" FontAttributes="Bold"/>
+                                            <Label Text="30" HorizontalOptions="Center" VerticalOptions="End" FontAttributes="Bold"/>
                                         </StackLayout>
                                     </Frame>
                                 </Grid>

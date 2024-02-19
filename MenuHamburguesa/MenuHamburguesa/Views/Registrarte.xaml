@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AirePuro.View.Registrarte"          
-             Background="#112B47">
+             Background="#F12B47">
     <ContentPage.Content>
 
         <StackLayout Padding="48,0" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
@@ -26,7 +26,8 @@
                    Margin="10,0,10,0"/>
 
 
-            <Label Text="NUMERO" FontSize="25" HorizontalOptions="Center" Margin="10,20,10,10"/>
+            <Label Text="NUMERO" FontSize="25" HorizontalOptions="Center" 
+                   Margin="10,0,10,0"/>
             <Entry Placeholder="numero" Background="white"
                    Margin="10,0,10,0" Keyboard="Numeric" />
 

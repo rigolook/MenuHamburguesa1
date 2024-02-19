@@ -2,31 +2,29 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MenuHamburguesa.Views.Login"             
-             Background="#112B47">
+             Background="#b4ff9a">
     <ContentPage.Content>
 
         <StackLayout Padding="48,0" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
 
-            <Label Text="Login" FontSize="80" HorizontalOptions="Center" 
-                     />
+            <Label Text="Login" FontSize="70" HorizontalOptions="Center" />
             <Image Source="signodeviento.png" WidthRequest="180" HeightRequest="180"/>
 
 
-            <Label Text="Mejora tu entorno" HorizontalOptions="Center"
-                   />
+            <Label Text="Mejora tu entorno" HorizontalOptions="Center"/>
 
             <Label Text="USUARIO" FontSize="25" HorizontalOptions="Center"
-                   Margin="10,20,10,10"/>
+                   Margin="10,20,10,0"/>
             <Entry Placeholder="jerh" Background="white"
-                   Margin="10,20,10,10"/>
+                   Margin="10,20,10,0"/>
 
             <Label Text="CONTRASEÑA" FontSize="25" HorizontalOptions="Center"
-                   Margin="10,20,10,10"/>
+                   Margin="10,20,10,0"/>
             <Entry  Placeholder="*******" Background="white" IsPassword="True"
-                    Margin="10,20,10,10"/>
+                    Margin="10,20,10,0"/>
 
             <Button Text="Iniciar" Command="{Binding Iniciarcommand}"
-                    Margin="60,20,60,10"
+                    Margin="60,20,60,0"
                     CornerRadius="18"
                     HeightRequest="60"/>
 
