@@ -18,6 +18,7 @@ namespace MenuHamburguesa
         {
             InitializeComponent();
             UpdateData(); // Actualizar los datos al cargar la página
+
         }
 
         private void OnUpdateClicked(object sender, EventArgs e)

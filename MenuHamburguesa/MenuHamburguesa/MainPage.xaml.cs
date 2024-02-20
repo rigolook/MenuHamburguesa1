@@ -15,6 +15,7 @@ namespace MenuHamburguesa
         public MainPage()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
             this.Master = new Nav();
             this.Detail = new NavigationPage(new Inicio());
             App.MasterDet = this;

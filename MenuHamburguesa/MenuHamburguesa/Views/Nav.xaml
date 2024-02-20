@@ -19,6 +19,7 @@
         <Button x:Name="inicio" Text="Inicio" FontSize="20" Grid.Column="0" Grid.Row="0" Clicked="GoInicio"/>
         <Button x:Name="monitoreo" Text="Monitoreo" FontSize="20" Grid.Column="0" Grid.Row="1" Clicked="GoMonitoreo"/>
         <Button x:Name="reigstro" Text="Registro" FontSize="20" Grid.Column="0" Grid.Row="2" Clicked="GoRegistro"/>
+        <Button x:Name="configuracion" Text="Configuracion" FontSize="20" Grid.Column="0" Grid.Row="3" Clicked="configuracion_Clicked"/>
         <Button x:Name="cerrar sesior" Text="Cerrar Sesión" FontSize="20" Grid.Column="0" Grid.Row="4"/>
    
 
