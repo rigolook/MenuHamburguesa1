@@ -39,6 +39,32 @@
                         </StackLayout>
                     </Frame>
 
+                    <Frame Grid.Row="1" WidthRequest="350"
+                                    HorizontalOptions="Center"
+                                    CornerRadius="15"
+                                    Margin="0,0,0,0"
+                                    BorderColor="#ADF7B6"
+                                    BackgroundColor="#FFC09F">
+                        <StackLayout Margin="0,30,0,0">
+                            <Label Text="Ubicacion:" HorizontalOptions="Center" VerticalOptions="Start" FontAttributes="Bold,Italic" FontSize="20"/>
+                            <Label Text="Habitacion principal" HorizontalOptions="Center" Margin="4" VerticalOptions="Start" FontAttributes="Bold"/>
+
+                            <Label Text="Fecha y hora:" HorizontalOptions="Center" VerticalOptions="Start" FontAttributes="Bold,Italic" FontSize="20"/>
+                            <Label Text="21/02/2024 9:33" HorizontalOptions="Center" Margin="4" VerticalOptions="Start" FontAttributes="Bold"/>
+
+                            <Label Text="Temperatura:" HorizontalOptions="Center" VerticalOptions="Start" FontAttributes="Bold,Italic" FontSize="20"/>
+                            <Label Text="35°" HorizontalOptions="Center" Margin="4" VerticalOptions="Start" FontAttributes="Bold"/>
+
+                            <Label Text="Nombre de gas detectado:" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold,Italic" FontSize="20"/>
+                            <Label Text="Dioxido de carbono" Margin="4" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold"/>
+
+                            <Label Text="gas detectado:" HorizontalOptions="Center" VerticalOptions="End" FontAttributes="Bold,Italic" FontSize="20"/>
+                            <Label Text="Si" HorizontalOptions="Center" VerticalOptions="End" FontAttributes="Bold"/>
+
+                            <Label Text="RPM:" HorizontalOptions="Center" VerticalOptions="End" FontAttributes="Bold,Italic" FontSize="20"/>
+                            <Label Text="66" HorizontalOptions="Center" VerticalOptions="End" FontAttributes="Bold"/>
+                        </StackLayout>
+                    </Frame>
                 </Grid>
             </StackLayout>
         </ScrollView>

@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MenuHamburguesa.Nav"
              Title="Nav">
-    <Grid BackgroundColor="#258d19">
+    <Grid BackgroundColor="#b4ff9a">
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
             <RowDefinition Height="60"/>
@@ -12,16 +12,20 @@
             <RowDefinition Height="60"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width=".5*"/>
-            <ColumnDefinition Width=".5*"/>
+            <ColumnDefinition Width=".2*"/>
+            <ColumnDefinition Width=".2*"/>
         </Grid.ColumnDefinitions>
         
-        <Button x:Name="inicio" Text="Inicio" FontSize="20" Grid.Column="0" Grid.Row="0" Clicked="GoInicio"/>
-        <Button x:Name="monitoreo" Text="Monitoreo" FontSize="20" Grid.Column="0" Grid.Row="1" Clicked="GoMonitoreo"/>
-        <Button x:Name="reigstro" Text="Registro" FontSize="20" Grid.Column="0" Grid.Row="2" Clicked="GoRegistro"/>
-        <Button x:Name="configuracion" Text="Configuracion" FontSize="20" Grid.Column="0" Grid.Row="3" Clicked="configuracion_Clicked"/>
-        <Button x:Name="cerrar sesior" Text="Cerrar Sesión" FontSize="20" Grid.Column="0" Grid.Row="4"/>
-   
+        <ImageButton x:Name="inicio" Source="inicio.png" Grid.Column="0" Grid.Row="0" Clicked="GoInicio" BackgroundColor="Transparent"/>
+        <Label Grid.Column="1" Grid.Row="0" Text="Iniciar Sesión" FontAttributes="Bold" FontSize="20" TextColor="#ff9000"/>
+        <ImageButton x:Name="monitoreo" Source="monitoreo1.png"  Grid.Column="0" Grid.Row="1" Clicked="GoMonitoreo" BackgroundColor="Transparent"/>
+        <Label Grid.Column="1" Grid.Row="1" Text="Monitoreo" FontAttributes="Bold" FontSize="20" TextColor="#ff9000"/>
+        <ImageButton x:Name="reigstro" Source="registro" Grid.Column="0" Grid.Row="2" Clicked="GoRegistro" BackgroundColor="Transparent"/>
+        <Label Grid.Column="1" Grid.Row="2" Text="Historial" FontAttributes="Bold" FontSize="20" TextColor="#ff9000"/>
+        <ImageButton x:Name="configuracion" Source="configuraciones.png" Grid.Column="0" Grid.Row="3" Clicked="configuracion_Clicked" BackgroundColor="Transparent"/>
+        <Label Grid.Column="1" Grid.Row="3" Text="Configuraciones" FontAttributes="Bold" FontSize="20" TextColor="#ff9000"/>
+        <ImageButton x:Name="cerrarsesior" Source="cerrarsesion.png" Grid.Column="0" Grid.Row="4" Clicked="cerrarsesior_Clicked" BackgroundColor="Transparent"/>
+        <Label Grid.Column="1" Grid.Row="4" Text="Cerrar Sesión" FontAttributes="Bold" FontSize="20" TextColor="#ff9000"/>
 
     </Grid>
 </ContentPage>

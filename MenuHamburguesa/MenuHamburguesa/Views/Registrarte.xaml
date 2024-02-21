@@ -2,38 +2,67 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AirePuro.View.Registrarte"          
-             Background="#F12B47">
+             BackgroundColor="#E6F7FF" 
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand" Padding="20">
 
-        <StackLayout Padding="48,0" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+            <Frame CornerRadius="100">
+                <!-- Campos de entrada de usuario y contraseña -->
+                <Entry Placeholder="Usuario"
+                   PlaceholderColor="#6699CC"
+                   BackgroundColor="#FFFFFF" 
+                   TextColor="#333333" 
+                   Margin="0,0,0,10" />
+            </Frame>
+            <Frame CornerRadius="100">
+                <!-- Color de fondo blanco, texto oscuro -->
+                <Entry Placeholder="Numero de telefono"
+                   PlaceholderColor="#6699CC" 
+                   BackgroundColor="#FFFFFF"
+                   TextColor="#333333"
+                   Margin="0,0,0,10" />
+            </Frame>
+            <Frame CornerRadius="100">
+                <!-- Color de fondo blanco, texto oscuro -->
+                <Entry Placeholder="Contraseña"
+                   PlaceholderColor="#6699CC" 
+                   BackgroundColor="#FFFFFF"
+                   TextColor="#333333"
+                   IsPassword="True" 
+                   Margin="0,0,0,10" />
+                <!-- Color de fondo blanco, texto oscuro -->
+            </Frame>
+            <Frame CornerRadius="100">
+                <!-- Color de fondo blanco, texto oscuro -->
+                <Entry Placeholder="Confirmar Contraseña"
+                   PlaceholderColor="#6699CC" 
+                   BackgroundColor="#FFFFFF"
+                   TextColor="#333333"
+                   IsPassword="True" 
+                   Margin="0,0,0,10" />
+                <!-- Color de fondo blanco, texto oscuro -->
+            </Frame>
 
-            <Image Source="signodeviento.png" WidthRequest="160" HeightRequest="160"/>
-            <Label Text="Registrar" FontSize="40" HorizontalOptions="Center" />
+            <!-- Botón de registro -->
+            <Button Text="Registrarse"
+                    BackgroundColor="#6699CC"
+                    TextColor="#FFFFFF" 
+                    CornerRadius="50" 
+                    Margin="0,120,0,0"
+                    Command="{Binding Registrarcommand}"/>
 
+            <!-- Color de botón azul claro -->
 
-            <Label Text="USUARIO" FontSize="25" HorizontalOptions="Center"
-                   Margin="0,20,0,0"/>
-            <Entry Placeholder="jerh" Background="white"
-                   Margin="10,0,10,0"/>
-
-            <Label Text="CONTRASEÑA" FontSize="25" HorizontalOptions="Center"
-                   Margin="10,0,10,0"/>
-            <Entry  Placeholder="*******" Background="white" IsPassword="True"
-                    Margin="10,0,10,0"/>
-
-            <Label Text="CONFIRMAR" FontSize="25" HorizontalOptions="Center"/>
-            <Entry  Placeholder="*******" Background="white" IsPassword="True"
-                   Margin="10,0,10,0"/>
-
-
-            <Label Text="NUMERO" FontSize="25" HorizontalOptions="Center" 
-                   Margin="10,0,10,0"/>
-            <Entry Placeholder="numero" Background="white"
-                   Margin="10,0,10,0" Keyboard="Numeric" />
-
-            <Button Text="Iniciar" Command="{Binding Registrarcommand}" Margin="60,20,60,10"
-                    CornerRadius="18" HeightRequest="60"/>
-
+            <!-- Enlace para iniciar sesión -->
+            <Label Text="¿Ya tienes una cuenta? Inicia sesión aquí."
+                   TextColor="#6699CC" 
+                   HorizontalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding Registrarcommand}"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <!-- Color de texto azul claro -->
 
         </StackLayout>
     </ContentPage.Content>

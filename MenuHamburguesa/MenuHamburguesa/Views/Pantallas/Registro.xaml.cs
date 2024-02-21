@@ -15,6 +15,7 @@ namespace MenuHamburguesa.Views.Pantallas
         public Registro()
         {
             InitializeComponent();
+            NavigationPage.SetHasBackButton(this, false);
         }
         
     }

@@ -1,4 +1,5 @@
-﻿using MenuHamburguesa.Views.Pantallas;
+﻿using MenuHamburguesa.ViewModel;
+using MenuHamburguesa.Views.Pantallas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,8 @@ namespace MenuHamburguesa.Views
         public Monitoreo()
         {
             InitializeComponent();
-
+            NavigationPage.SetHasBackButton(this, false);
+            BindingContext = new VMMonitoreo(Navigation);
         }
       
     }

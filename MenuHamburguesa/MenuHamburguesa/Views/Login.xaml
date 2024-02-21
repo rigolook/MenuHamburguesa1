@@ -2,46 +2,50 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MenuHamburguesa.Views.Login"             
-             Background="#b4ff9a">
+             BackgroundColor="#E6F7FF" 
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand" Padding="20">
 
-        <StackLayout Padding="48,0" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+            <Frame CornerRadius="100">
+                <!-- Campos de entrada de usuario y contraseña -->
+                <Entry Placeholder="Nombre de usuario"
+                       PlaceholderColor="#6699CC"
+                       BackgroundColor="#FFFFFF" 
+                       TextColor="#333333" 
+                       Margin="0,0,0,10" />
+            </Frame>
 
-            <Label Text="Login" FontSize="70" HorizontalOptions="Center" />
-            <Image Source="signodeviento.png" WidthRequest="180" HeightRequest="180"/>
+            <Frame CornerRadius="100">
+                <!-- Color de fondo blanco, texto oscuro -->
+                <Entry Placeholder="Contraseña"
+                       PlaceholderColor="#6699CC" 
+                       BackgroundColor="#FFFFFF"
+                       TextColor="#333333"
+                       IsPassword="True" 
+                       Margin="0,0,0,10" />
+                <!-- Color de fondo blanco, texto oscuro -->
+            </Frame>
+
+            <Button Text="Iniciar Seción"
+                     BackgroundColor="#6699CC"
+                     TextColor="#FFFFFF" 
+                     CornerRadius="50" 
+                     Margin="0,120,0,0"
+                     Command="{Binding Iniciarcommand}"/>
+            <!-- Botón de registro -->
 
 
-            <Label Text="Mejora tu entorno" HorizontalOptions="Center"/>
-
-            <Label Text="USUARIO" FontSize="25" HorizontalOptions="Center"
-                   Margin="10,20,10,0"/>
-            <Entry Placeholder="jerh" Background="white"
-                   Margin="10,20,10,0"/>
-
-            <Label Text="CONTRASEÑA" FontSize="25" HorizontalOptions="Center"
-                   Margin="10,20,10,0"/>
-            <Entry  Placeholder="*******" Background="white" IsPassword="True"
-                    Margin="10,20,10,0"/>
-
-            <Button Text="Iniciar" Command="{Binding Iniciarcommand}"
-                    Margin="60,20,60,0"
-                    CornerRadius="18"
-                    HeightRequest="60"/>
-
-            <Label HorizontalOptions="Center">
-                <Label.FormattedText>
-                    <FormattedString>
-                        <Span Text="¿Quieres registrarte? "/>
-                        <Span Text="Registrarte" FontAttributes="Bold" TextDecorations="Underline">
-                            <Span.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding Registrarcommand}"/>
-                            </Span.GestureRecognizers>
-                        </Span>
-                    </FormattedString>
-                </Label.FormattedText>
+            <!-- Enlace para iniciar sesión -->
+            <Label Text="¿Aun notienes una cuenta? Registrate aquí."
+                   TextColor="#6699CC" 
+                   HorizontalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding Registrarcommand}"/>
+                </Label.GestureRecognizers>
             </Label>
+            <!-- Color de texto azul claro -->
 
         </StackLayout>
-
     </ContentPage.Content>
 </ContentPage>
