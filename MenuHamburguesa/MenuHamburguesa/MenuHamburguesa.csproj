@@ -18,28 +18,28 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Views\Login.xaml">
+    <EmbeddedResource Update="Views\Pantallas\Login.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Pantallas\configuracion.xaml">
+    <EmbeddedResource Update="Views\PantallasMenuHamburgesa\configuracion.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Pantallas\Inicio.xaml">
+    <EmbeddedResource Update="Views\PantallasMenuHamburgesa\Inicio.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Pantallas\Monitoreo.xaml">
+    <EmbeddedResource Update="Views\PantallasMenuHamburgesa\Monitoreo.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Nav.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Pantallas\Registro.xaml">
+    <EmbeddedResource Update="Views\PantallasMenuHamburgesa\Registro.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Pantallas\SenGaz.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Registrarte.xaml">
+    <EmbeddedResource Update="Views\Pantallas\Registrarte.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
   </ItemGroup>

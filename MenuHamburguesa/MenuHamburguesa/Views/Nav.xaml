@@ -2,30 +2,77 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MenuHamburguesa.Nav"
-             Title="Nav">
+             Title="Nav"             BackgroundColor="#b4ff9a">
+
     <Grid BackgroundColor="#b4ff9a">
         <Grid.RowDefinitions>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="60"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width=".2*"/>
-            <ColumnDefinition Width=".2*"/>
+            <ColumnDefinition Width="*"/>
+
+
+
         </Grid.ColumnDefinitions>
-        
-        <ImageButton x:Name="inicio" Source="inicio.png" Grid.Column="0" Grid.Row="0" Clicked="GoInicio" BackgroundColor="Transparent"/>
-        <Label Grid.Column="1" Grid.Row="0" Text="Iniciar Sesión" FontAttributes="Bold" FontSize="20" TextColor="#ff9000"/>
-        <ImageButton x:Name="monitoreo" Source="monitoreo1.png"  Grid.Column="0" Grid.Row="1" Clicked="GoMonitoreo" BackgroundColor="Transparent"/>
-        <Label Grid.Column="1" Grid.Row="1" Text="Monitoreo" FontAttributes="Bold" FontSize="20" TextColor="#ff9000"/>
-        <ImageButton x:Name="reigstro" Source="registro" Grid.Column="0" Grid.Row="2" Clicked="GoRegistro" BackgroundColor="Transparent"/>
-        <Label Grid.Column="1" Grid.Row="2" Text="Historial" FontAttributes="Bold" FontSize="20" TextColor="#ff9000"/>
-        <ImageButton x:Name="configuracion" Source="configuraciones.png" Grid.Column="0" Grid.Row="3" Clicked="configuracion_Clicked" BackgroundColor="Transparent"/>
-        <Label Grid.Column="1" Grid.Row="3" Text="Configuraciones" FontAttributes="Bold" FontSize="20" TextColor="#ff9000"/>
-        <ImageButton x:Name="cerrarsesior" Source="cerrarsesion.png" Grid.Column="0" Grid.Row="4" Clicked="cerrarsesior_Clicked" BackgroundColor="Transparent"/>
-        <Label Grid.Column="1" Grid.Row="4" Text="Cerrar Sesión" FontAttributes="Bold" FontSize="20" TextColor="#ff9000"/>
+
+        <ContentView Grid.Column="0" Grid.Row="0"  Padding="0" Margin="40,40,10,10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <ContentView.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding IrIniciocommand}"/>
+            </ContentView.GestureRecognizers>
+            <StackLayout Orientation="Horizontal">
+                <ImageButton x:Name="inicio" Source="inicio.png" BackgroundColor="Transparent"/>
+                <Label Text="Iniciar Sesión" FontAttributes="Bold" FontSize="20" TextColor="#ff9000"/>
+            </StackLayout>
+        </ContentView>
+
+        <ContentView Grid.Column="0" Grid.Row="1" Padding="0" Margin="40,40,10,10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <ContentView.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding IrMonitoreocommand}"/>
+            </ContentView.GestureRecognizers>
+            <StackLayout Orientation="Horizontal">
+                <ImageButton x:Name="monitoreo" Source="monitoreo1.png"  BackgroundColor="Transparent"/>
+                <Label Text="Monitoreo" FontAttributes="Bold" FontSize="20" TextColor="#ff9000"/>
+            </StackLayout>
+        </ContentView>
+
+        <ContentView Grid.Column="0" Grid.Row="2" Padding="0" Margin="40,40,10,10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <ContentView.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding IrRegistrocommand}"/>
+            </ContentView.GestureRecognizers>
+            <StackLayout Orientation="Horizontal">
+                <ImageButton x:Name="reigstro" Source="registro.png"  BackgroundColor="Transparent" />
+                <Label Text="Historial" FontAttributes="Bold" FontSize="20" TextColor="#ff9000"/>
+            </StackLayout>
+        </ContentView>
+
+
+        <ContentView Grid.Column="0" Grid.Row="3" Padding="0" Margin="40,40,10,10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <ContentView.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding IrConfcommand}"/>
+            </ContentView.GestureRecognizers>
+            <StackLayout Orientation="Horizontal">
+                <ImageButton x:Name="configuracion" Source="configuraciones.png"  BackgroundColor="Transparent"/>
+                <Label Text="Configuraciones" FontAttributes="Bold" FontSize="20" TextColor="#ff9000"/>
+            </StackLayout>
+        </ContentView>
+
+        <ContentView Grid.Column="0" Grid.Row="4" Padding="0" Margin="40,40,10,10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <ContentView.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding IrCerrarSesiorcommand}"/>
+            </ContentView.GestureRecognizers>
+            <StackLayout Orientation="Horizontal">
+                <ImageButton x:Name="cerrarsesior" Source="cerrarsesion.png"  BackgroundColor="Transparent"/>
+                <Label Text="Cerrar Sesión" FontAttributes="Bold" FontSize="20" TextColor="#ff9000"/>
+            </StackLayout>
+        </ContentView>
 
     </Grid>
 </ContentPage>
+    
+    
+    
+    
