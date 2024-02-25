@@ -24,7 +24,7 @@
                 <TapGestureRecognizer Command="{Binding IrIniciocommand}"/>
             </ContentView.GestureRecognizers>
             <StackLayout Orientation="Horizontal">
-                <ImageButton x:Name="inicio" Source="inicio.png" BackgroundColor="Transparent"/>
+                <Image x:Name="inicio" Source="inicio.png" BackgroundColor="Transparent"/>
                 <Label Text="Iniciar Sesión" FontAttributes="Bold" FontSize="20" TextColor="#ff9000"/>
             </StackLayout>
         </ContentView>
@@ -34,7 +34,7 @@
                 <TapGestureRecognizer Command="{Binding IrMonitoreocommand}"/>
             </ContentView.GestureRecognizers>
             <StackLayout Orientation="Horizontal">
-                <ImageButton x:Name="monitoreo" Source="monitoreo1.png"  BackgroundColor="Transparent"/>
+                <Image x:Name="monitoreo" Source="monitoreo1.png"  BackgroundColor="Transparent"/>
                 <Label Text="Monitoreo" FontAttributes="Bold" FontSize="20" TextColor="#ff9000"/>
             </StackLayout>
         </ContentView>
@@ -44,7 +44,7 @@
                 <TapGestureRecognizer Command="{Binding IrRegistrocommand}"/>
             </ContentView.GestureRecognizers>
             <StackLayout Orientation="Horizontal">
-                <ImageButton x:Name="reigstro" Source="registro.png"  BackgroundColor="Transparent" />
+                <Image x:Name="reigstro" Source="registro.png"  BackgroundColor="Transparent" />
                 <Label Text="Historial" FontAttributes="Bold" FontSize="20" TextColor="#ff9000"/>
             </StackLayout>
         </ContentView>
@@ -55,7 +55,7 @@
                 <TapGestureRecognizer Command="{Binding IrConfcommand}"/>
             </ContentView.GestureRecognizers>
             <StackLayout Orientation="Horizontal">
-                <ImageButton x:Name="configuracion" Source="configuraciones.png"  BackgroundColor="Transparent"/>
+                <Image x:Name="configuracion" Source="configuraciones.png"  BackgroundColor="Transparent"/>
                 <Label Text="Configuraciones" FontAttributes="Bold" FontSize="20" TextColor="#ff9000"/>
             </StackLayout>
         </ContentView>
@@ -65,7 +65,7 @@
                 <TapGestureRecognizer Command="{Binding IrCerrarSesiorcommand}"/>
             </ContentView.GestureRecognizers>
             <StackLayout Orientation="Horizontal">
-                <ImageButton x:Name="cerrarsesior" Source="cerrarsesion.png"  BackgroundColor="Transparent"/>
+                <Image x:Name="cerrarsesior" Source="cerrarsesion.png"  BackgroundColor="Transparent"/>
                 <Label Text="Cerrar Sesión" FontAttributes="Bold" FontSize="20" TextColor="#ff9000"/>
             </StackLayout>
         </ContentView>
