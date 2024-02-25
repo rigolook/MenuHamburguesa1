@@ -16,7 +16,7 @@ namespace MenuHamburguesa.Views.Pantallas
 		public SenGaz ()
 		{
 			InitializeComponent ();
-            NavigationPage.SetHasBackButton(this, false);
+           // NavigationPage.SetHasBackButton(this, false);
             BindingContext = new VMMonitoreo(Navigation);
         }
 	}
