@@ -4,7 +4,7 @@
              x:Class="MenuHamburguesa.Views.Monitoreo"
                          Title="Monitoreo">
     <ScrollView>
-        <StackLayout>
+        <StackLayout BackgroundColor="#b4ff9a"> 
 
             <ContentView Grid.Column="0" Grid.Row="0" Padding="0" Margin="40,40,10,10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                 <ContentView.GestureRecognizers>

@@ -15,7 +15,14 @@
                        BackgroundColor="#FFFFFF" 
                        TextColor="#333333" 
                        Margin="0,0,0,10"
-                       Text="{Binding NombreUsuario}" />
+                       Text="{Binding Nombre}">
+                    <Entry.Triggers>
+                        <Trigger TargetType="Entry" Property="Text" Value="">
+                            <Setter Property="BackgroundColor" Value="Red"/>
+                            <Setter Property="PlaceholderColor" Value="White"/>
+                        </Trigger>
+                    </Entry.Triggers>
+                </Entry>
             </Frame>
 
             <Frame CornerRadius="100">
@@ -26,7 +33,13 @@
                        TextColor="#333333"
                        IsPassword="True" 
                        Margin="0,0,0,10"
-                       Text="{Binding Contrasena}" />
+                       Text="{Binding Password}" >
+                    <Entry.Triggers>
+                        <DataTrigger TargetType="Entry" Binding="{Binding Nombre}" Value="">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                    </Entry.Triggers>
+                </Entry>
                 <!-- Color de fondo blanco, texto oscuro -->
             </Frame>
 
@@ -37,7 +50,17 @@
                      CornerRadius="50" 
                      Margin="0,120,0,0"
                     Clicked="btnIniciarSesion_Clicked"
-                     Command="{Binding Iniciarcommand}"/>
+                     Command="{Binding Iniciarcommand}" IsEnabled="False">
+                <Button.Triggers>
+                    <MultiTrigger TargetType="Button">
+                        <MultiTrigger.Conditions>
+                            <BindingCondition Binding="{Binding Nombre}" Value="nombre"/>
+                            <BindingCondition Binding="{Binding Password}" Value="contraseña"/>
+                        </MultiTrigger.Conditions>
+                        <Setter Property="IsEnabled" Value="True"/>
+                    </MultiTrigger>
+                </Button.Triggers>
+            </Button>
             <!-- Botón de inicio de sesión -->
 
             <!-- Enlace para iniciar sesión -->

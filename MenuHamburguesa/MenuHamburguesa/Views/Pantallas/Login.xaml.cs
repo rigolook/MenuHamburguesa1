@@ -26,7 +26,7 @@ namespace MenuHamburguesa.Views
             await button.ScaleTo(1.2, 200, Easing.SinOut);
             await Task.Delay(200);
             await button.ScaleTo(1, 200, Easing.SinOut);
-            button.BackgroundColor = Color.FromHex("#FEC100");
+            button.BackgroundColor = Color.FromHex("#6699CC");
             await DisplayAlert("Éxito", "La secion se inicio exitosamente.", "Aceptar");
         }
     }
