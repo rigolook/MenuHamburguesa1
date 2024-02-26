@@ -1,6 +1,7 @@
 ﻿using MenuHamburguesa.Models;
 using MenuHamburguesa.Views;
 using MenuHamburguesa.Views.Pantallas;
+using MenuHamburguesa.Views.PantallasMenuHamburgesa;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -55,6 +56,12 @@ namespace MenuHamburguesa.ViewModel
             App.MasterDet.IsPresented = false;
             await App.MasterDet.Detail.Navigation.PushAsync(new configuracion());
         }
+        public async Task GoConfigSensores()
+        {
+
+            App.MasterDet.IsPresented = false;
+            await App.MasterDet.Detail.Navigation.PushAsync(new configuracionSensores());
+        }
         public async Task GoCerrarSesior()
         {
 
@@ -71,6 +78,7 @@ namespace MenuHamburguesa.ViewModel
         public ICommand IrMonitoreocommand => new Command(async () => await GoMonitoreo());
         public ICommand IrRegistrocommand => new Command(async () => await GoRegistro());
         public ICommand IrConfcommand => new Command(async () => await GoConfig());
+        public ICommand IrConfSensorcommand => new Command(async () => await GoConfigSensores());
         public ICommand IrCerrarSesiorcommand => new Command(async () => await GoCerrarSesior());
 
         #endregion

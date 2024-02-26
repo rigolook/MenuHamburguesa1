@@ -18,5 +18,16 @@ namespace AirePuro.View
 			InitializeComponent ();
             BindingContext = new VMRegistrarse(Navigation);
         }
-	}
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            button.BackgroundColor = Color.Green;
+            await button.ScaleTo(1.2, 200, Easing.SinOut);
+            await Task.Delay(200);
+            await button.ScaleTo(1, 200, Easing.SinOut);
+            button.BackgroundColor = Color.FromHex("#FEC100");
+            await DisplayAlert("Éxito", "Se registro correctamente.", "Aceptar");
+        }
+    }
 }

@@ -11,6 +11,7 @@
             <RowDefinition Height="100"/>
             <RowDefinition Height="100"/>
             <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -56,11 +57,21 @@
             </ContentView.GestureRecognizers>
             <StackLayout Orientation="Horizontal">
                 <Image x:Name="configuracion" Source="configuraciones.png"  BackgroundColor="Transparent"/>
-                <Label Text="Configuraciones" FontAttributes="Bold" FontSize="20" TextColor="#ff9000"/>
+                <Label Text="Configuraciones Ventiladores" FontAttributes="Bold" FontSize="20" TextColor="#ff9000"/>
             </StackLayout>
         </ContentView>
 
         <ContentView Grid.Column="0" Grid.Row="4" Padding="0" Margin="40,40,10,10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <ContentView.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding IrConfSensorcommand}"/>
+            </ContentView.GestureRecognizers>
+            <StackLayout Orientation="Horizontal">
+                <Image x:Name="configuracionSensores" Source="configuraciones.png"  BackgroundColor="Transparent"/>
+                <Label Text="Configuraciones Sensores" FontAttributes="Bold" FontSize="20" TextColor="#ff9000"/>
+            </StackLayout>
+        </ContentView>
+        
+        <ContentView Grid.Column="0" Grid.Row="5" Padding="0" Margin="40,40,10,10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
             <ContentView.GestureRecognizers>
                 <TapGestureRecognizer Command="{Binding IrCerrarSesiorcommand}"/>
             </ContentView.GestureRecognizers>
