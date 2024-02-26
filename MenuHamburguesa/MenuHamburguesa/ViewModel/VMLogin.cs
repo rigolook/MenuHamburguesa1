@@ -11,18 +11,29 @@ namespace MenuHamburguesa.ViewModel
 {
     internal class VMLogin : BaseViewModel
     {
+        private string _Mensaje;
         public VMLogin(INavigation naivigation)
         {
             Navigation = naivigation;
 
         }
-
+        public string Mensaje
+        {
+            get { return _Mensaje; }
+            set
+            {
+                _Mensaje = value;
+                OnPropertyChanged();
+            }
+        }
         #region Procesos
 
         public async Task IniciarSecion()
         {
 
             await Navigation.PushAsync(new MainPage());
+            Mensaje = "Haz iniciado sesion con exito";
+
         }
 
         public async Task Registrar()
