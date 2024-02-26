@@ -8,7 +8,7 @@
 
             <ContentView Grid.Column="0" Grid.Row="0" Padding="0" Margin="40,40,10,10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                 <ContentView.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding IrSensoresGascommand}" />
+                    <TapGestureRecognizer Command="{Binding IrVentiladorescommand}" />
                 </ContentView.GestureRecognizers>
                 <StackLayout Orientation="Horizontal">
                     <Image Source="velocimetro.png" BackgroundColor="Transparent" HeightRequest="120" WidthRequest="120" />
@@ -19,7 +19,7 @@
 
             <ContentView Grid.Column="0" Grid.Row="0" Padding="0" Margin="40,40,10,10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                 <ContentView.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding IrSensoresGascommand}" />
+                    <TapGestureRecognizer Command="{Binding IrTemperaturacommand}" />
                 </ContentView.GestureRecognizers>
                 <StackLayout Orientation="Horizontal">
                     <Image Source="celsius.png" BackgroundColor="Transparent" HeightRequest="120" WidthRequest="120" />

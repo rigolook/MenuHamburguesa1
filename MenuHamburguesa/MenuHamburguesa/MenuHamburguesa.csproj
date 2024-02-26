@@ -18,6 +18,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\Pantallas\SenosorTemp.xaml.cs">
+      <DependentUpon>SenosorTemp.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Pantallas\Ventiladores.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>Ventiladores.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Update="Views\Pantallas\Login.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -34,6 +44,10 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\PantallasMenuHamburgesa\Registro.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Pantallas\Ventiladores.xaml">
+      <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Pantallas\SenGaz.xaml">
