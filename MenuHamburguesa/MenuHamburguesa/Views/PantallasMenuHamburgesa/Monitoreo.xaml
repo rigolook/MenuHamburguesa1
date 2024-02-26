@@ -8,10 +8,10 @@
 
             <ContentView Grid.Column="0" Grid.Row="0" Padding="0" Margin="40,40,10,10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                 <ContentView.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding IrSensoresGascommand}" />
+                    <TapGestureRecognizer Command="{Binding IrVentiladorescommand}" />
                 </ContentView.GestureRecognizers>
                 <StackLayout Orientation="Horizontal">
-                    <Image Source="https://i.ibb.co/nLxLHvC/velocimetro.png" BackgroundColor="Transparent" HeightRequest="120" WidthRequest="120" />
+                    <Image Source="velocimetro.png" BackgroundColor="Transparent" HeightRequest="120" WidthRequest="120" />
                     <Label Text="Ventiladores" FontAttributes="Bold" FontSize="45" TextColor="#00e400" />
                 </StackLayout>
             </ContentView>
@@ -19,10 +19,10 @@
 
             <ContentView Grid.Column="0" Grid.Row="0" Padding="0" Margin="40,40,10,10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                 <ContentView.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding IrSensoresGascommand}" />
+                    <TapGestureRecognizer Command="{Binding IrTemperaturacommand}" />
                 </ContentView.GestureRecognizers>
                 <StackLayout Orientation="Horizontal">
-                    <Image Source="https://i.ibb.co/XXw6jqc/celsius.png" BackgroundColor="Transparent" HeightRequest="120" WidthRequest="120" />
+                    <Image Source="celsius.png" BackgroundColor="Transparent" HeightRequest="120" WidthRequest="120" />
                     <Label Text="Sensores de temperatura" FontAttributes="Bold" FontSize="45" TextColor="#ff0000" />
                 </StackLayout>
             </ContentView>
@@ -34,39 +34,15 @@
                     <TapGestureRecognizer Command="{Binding IrSensoresGascommand}" />
                 </ContentView.GestureRecognizers>
                 <StackLayout Orientation="Horizontal">
-                    <Image Source=" https://i.ibb.co/jhcVzqG/gaz.png" BackgroundColor="Transparent" HeightRequest="120" WidthRequest="120" />
+                    <Image Source="gaz.png" BackgroundColor="Transparent" HeightRequest="120" WidthRequest="120" />
                     <Label Text="Sensores de gaz" FontAttributes="Bold" FontSize="45" TextColor="#8f3f97" />
                 </StackLayout>
             </ContentView>
 
 
 
-            <ListView ItemsSource="{Binding Lista}" Margin="20" >
-                <ListView.Header>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <Label Grid.Column="0" Text="Ubicación" FontAttributes="Bold" FontSize="20"/>
-                        <Label Grid.Column="1" Text="Gases" FontAttributes="Bold" FontSize="20"/>
-                    </Grid>
-                </ListView.Header>
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="*" />
-                                </Grid.ColumnDefinitions>
-                                <Label Grid.Column="0" Text="{Binding Habitacion}" FontSize="15"/>
-                                <Label Grid.Column="1" Text="{Binding Gaz}" FontSize="15"/>
-                            </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+
+            <Label Text="Hecho por JERH"/>
         </StackLayout>
     </ScrollView>
 </ContentPage>

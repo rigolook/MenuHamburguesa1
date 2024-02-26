@@ -4,11 +4,11 @@ using System.Text;
 
 namespace MenuHamburguesa.Models
 {
-    public class MSenGaz
+    public class MSenTemp
     {
         public string Habitacion { get; set; }
-        public string Gaz { get; set; }
-      //  public string Pin { get; set; }
-
+        public string Temp { get; set; }
+        public string Humedad { get; set; }
+        //  public string Pin { get; set; }
     }
 }

@@ -50,6 +50,16 @@ namespace MenuHamburguesa.ViewModel
             await Navigation.PushAsync(new SenGaz());
         }
 
+        public async Task IrVentiladores()
+        {
+
+            await Navigation.PushAsync(new Ventiladores());
+        }
+        public async Task IrTemperaturas()
+        {
+
+            await Navigation.PushAsync(new SenosorTemp());
+        }
         #endregion
 
 
@@ -57,6 +67,8 @@ namespace MenuHamburguesa.ViewModel
 
 
         public ICommand IrSensoresGascommand => new Command(async () => await IrSensoresGas());
+        public ICommand IrVentiladorescommand => new Command(async () => await IrVentiladores());
+        public ICommand IrTemperaturacommand => new Command(async () => await IrTemperaturas());
         #endregion
     }
 }
