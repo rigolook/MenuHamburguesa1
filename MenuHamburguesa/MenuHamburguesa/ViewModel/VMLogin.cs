@@ -15,8 +15,26 @@ namespace MenuHamburguesa.ViewModel
         string _nombre = string.Empty;
         //int _numero;
         string _password = string.Empty;
+        bool _inicio;
+
+        string _colorbtn = "#6699CC";
         #endregion
+        public VMLogin(INavigation naivigation)
+        {
+            Navigation = naivigation;
+
+        }  
         #region Objetos
+        public string colorbtn
+        {
+            get { return _colorbtn; }
+            set { SetValue(ref _colorbtn, value); }
+
+        }
+        public bool inicio
+        {
+            get { return _inicio; } set { SetValue(ref _inicio, value); } 
+        }
         public string Nombre
         {
             get { return _nombre; }
@@ -46,11 +64,7 @@ namespace MenuHamburguesa.ViewModel
         }
         #endregion
         private string _Mensaje;
-        public VMLogin(INavigation naivigation)
-        {
-            Navigation = naivigation;
-
-        }
+       
         public string Mensaje
         {
             get { return _Mensaje; }
@@ -62,14 +76,35 @@ namespace MenuHamburguesa.ViewModel
         }
         #region Procesos
 
-        public async Task IniciarSecion()
+        private async Task IniciarSecion()
         {
+            
+            if (Nombre != string.Empty && Password != string.Empty)
+            {
+                colorbtn = "Green";  
+                await Task.Delay(200);
+                colorbtn = "#6699CC";
 
-            await Navigation.PushAsync(new MainPage());
-            Mensaje = "Haz iniciado sesion con exito";
-
+                await Navigation.PushAsync(new MainPage());
+                await DisplayAlert("Éxito", "La Sesión se inició exitosamente.", "Aceptar");
+            }
+            else
+            {
+                await DisplayAlert("Datos erróneos", "Llena todos los campos para iniciar Sesión.", "Aceptar");
+            }
         }
-
+        public void confirmar()
+        {
+            if (Nombre != string.Empty && Password != string.Empty)
+            {
+                inicio = true;
+            }
+            else
+            {
+               inicio= false;
+            }
+        }
+        
         public async Task Registrar()
         {
 

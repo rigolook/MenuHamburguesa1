@@ -45,11 +45,11 @@
 
             <Button x:Name="btnIniciarSesion"
                      Text="Iniciar Sesión"
-                     BackgroundColor="#6699CC"
+                     BackgroundColor="{Binding colorbtn}"
                      TextColor="#FFFFFF" 
                      CornerRadius="50" 
                      Margin="0,120,0,0"
-                    Clicked="btnIniciarSesion_Clicked"
+                    
                      Command="{Binding Iniciarcommand}" IsEnabled="False">
                 <Button.Triggers>
                     <MultiTrigger TargetType="Button">
