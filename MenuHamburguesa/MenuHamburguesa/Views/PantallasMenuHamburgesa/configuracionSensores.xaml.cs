@@ -15,6 +15,7 @@ namespace MenuHamburguesa.Views.PantallasMenuHamburgesa
         public configuracionSensores()
         {
             InitializeComponent();
+            NavigationPage.SetHasBackButton(this, false);
         }
     }
 }

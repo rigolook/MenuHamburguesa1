@@ -5,66 +5,81 @@
              BackgroundColor="#E6F7FF" 
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
-        <StackLayout VerticalOptions="CenterAndExpand" Padding="20">
+        <StackLayout VerticalOptions="CenterAndExpand" Padding="60">
 
-            <Frame CornerRadius="100">
-                <!-- Campos de entrada de usuario y contraseña -->
-                <Entry Placeholder="Usuario"
+            <Frame CornerRadius="100" 
+                   Margin="30,0,10,0" 
+                   WidthRequest="200" 
+                   HeightRequest="200"
+                   Padding="0" 
+                   HasShadow="False" 
+                   BackgroundColor="Transparent">
+                <Image Source="airepuro.png"
+                       Aspect="AspectFill"/>
+            </Frame>
+            <Label Text="Usuario"
+                   TextColor="Black"
+                   FontSize="20"
+                   Margin="0,10,0,0"/>
+            <Entry Placeholder="Usuario"
                    PlaceholderColor="#6699CC"
-                   BackgroundColor="#FFFFFF" 
+                   BackgroundColor="Transparent" 
                    TextColor="#333333" 
-                   Margin="0,0,0,10" />
-            </Frame>
-            <Frame CornerRadius="100">
-                <!-- Color de fondo blanco, texto oscuro -->
-                <Entry Placeholder="Numero de telefono"
+                   Margin="0,0,0,10" 
+                   Text="{Binding Usuario}"/>
+            <Label Text="Numero de telefono"
+                   TextColor="Black"
+                   FontSize="20"/>
+            <Entry Placeholder="Numero de telefono"
                    PlaceholderColor="#6699CC" 
-                   BackgroundColor="#FFFFFF"
+                   BackgroundColor="Transparent"
                    TextColor="#333333"
-                   Margin="0,0,0,10" />
-            </Frame>
-            <Frame CornerRadius="100">
-                <!-- Color de fondo blanco, texto oscuro -->
-                <Entry Placeholder="Contraseña"
+                   Margin="0,0,0,10" 
+                   Text="{Binding Numero}"/>
+            <Label Text="Contraseña"
+                   TextColor="Black"
+                   FontSize="20"/>
+            <Entry Placeholder="Contraseña"
                    PlaceholderColor="#6699CC" 
-                   BackgroundColor="#FFFFFF"
-                   TextColor="#333333"
-                   IsPassword="True" 
-                   Margin="0,0,0,10" />
-                <!-- Color de fondo blanco, texto oscuro -->
-            </Frame>
-            <Frame CornerRadius="100">
-                <!-- Color de fondo blanco, texto oscuro -->
-                <Entry Placeholder="Confirmar Contraseña"
-                   PlaceholderColor="#6699CC" 
-                   BackgroundColor="#FFFFFF"
+                   BackgroundColor="Transparent"
                    TextColor="#333333"
                    IsPassword="True" 
-                   Margin="0,0,0,10" />
-                <!-- Color de fondo blanco, texto oscuro -->
-            </Frame>
+                   Margin="0,0,0,10"
+                   Text="{Binding Contraseña}"/>
+            <Label Text="Confirmar contraseña"
+                   TextColor="Black"
+                   FontSize="20"/>
+            <Entry Placeholder="Confirmar Contraseña"
+                   PlaceholderColor="#6699CC" 
+                   BackgroundColor="Transparent"
+                   TextColor="#333333"
+                   IsPassword="True" 
+                   Margin="0,0,0,10" 
+                   Text="{Binding ConfirmarContraseña}"/>
 
-            <!-- Botón de registro -->
             <Button Text="Registrarse"
                     BackgroundColor="#6699CC"
                     TextColor="#FFFFFF" 
-                    CornerRadius="50" 
-                    Margin="0,120,0,0"
+                    CornerRadius="20" 
+                    HeightRequest="60"
+                    Margin="60,30,50,0"
                     Clicked="Button_Clicked"
-                    Command="{Binding Registrarcommand}"/>
+                    Command="{Binding Registrarcommand}"
+                    IsEnabled="{Binding CamposRellenados}"/>
 
-            <!-- Color de botón azul claro -->
+            <Label Text="¿Ya tienes cuenta?"
+                   TextColor="Black"
+                   TranslationX="30"/>
 
-            <!-- Enlace para iniciar sesión -->
-            <Label Text="¿Ya tienes una cuenta? Inicia sesión aquí."
+            <Label Text="Inicia sesión aquí." 
                    TextColor="#6699CC" 
+                   TranslationX="56"
+                   TranslationY="-28"
                    HorizontalOptions="Center">
                 <Label.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding Registrarcommand}"/>
+                    <TapGestureRecognizer Command="{Binding volvercommand}"/>
                 </Label.GestureRecognizers>
             </Label>
-            <!-- Color de texto azul claro -->
-
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

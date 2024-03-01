@@ -5,84 +5,84 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace MenuHamburguesa.ViewModel
 {
     internal class VMLogin : BaseViewModel
     {
-        #region Referencias
-        string _nombre = string.Empty;
-        //int _numero;
-        string _password = string.Empty;
-        #endregion
-        #region Objetos
-        public string Nombre
+        private string _campo1;
+        private string _campo2;
+        private bool _camposRellenados;
+
+        public string Campo1
         {
-            get { return _nombre; }
+            get { return _campo1; }
             set
             {
-                _nombre = value;
-                OnPropertyChanged();
+                _campo1 = value;
+                OnPropertyChanged(nameof(Campo1));
+                VerificarCamposRellenados();
             }
         }
-        //public int Numero
-        //{
-        //    get { return _numero; }
-        //    set
-        //    {
-        //        _numero = value;
-        //        OnPropertyChanged();
-        //    }
-        //}
-        public string Password
+
+        public string Campo2
         {
-            get { return _password; }
+            get { return _campo2; }
             set
             {
-                _password = value;
-                OnPropertyChanged();
+                _campo2 = value;
+                OnPropertyChanged(nameof(Campo2));
+                VerificarCamposRellenados();
             }
         }
-        #endregion
-        private string _Mensaje;
+
+        public bool CamposRellenados
+        {
+            get { return _camposRellenados; }
+            set
+            {
+                _camposRellenados = value;
+                OnPropertyChanged(nameof(CamposRellenados));
+            }
+        }
+
+        public ICommand Iniciarcommand { get; private set; }
+        public ICommand Registrarcommand { get; private set; }
+
         public VMLogin(INavigation naivigation)
         {
             Navigation = naivigation;
-
+            Iniciarcommand = new Command(async () => await IniciarSesion(), () => CamposRellenados);
+            Registrarcommand = new Command(async () => await Registrar());
         }
-        public string Mensaje
+
+        private void VerificarCamposRellenados()
         {
-            get { return _Mensaje; }
-            set
+            CamposRellenados = !string.IsNullOrWhiteSpace(Campo1) && !string.IsNullOrWhiteSpace(Campo2);
+        }
+
+        private async Task IniciarSesion()
+        {
+            string usuarioRegistrado = Preferences.Get("Usuario", string.Empty);
+            string contraseñaRegistrada = Preferences.Get("Contraseña", string.Empty);
+
+            if (Campo1 == usuarioRegistrado && Campo2 == contraseñaRegistrada)
             {
-                _Mensaje = value;
-                OnPropertyChanged();
+                await Application.Current.MainPage.DisplayAlert("", "Inicio de sesión Exitoso", "ok");
+                await Navigation.PushAsync(new MainPage());
             }
-        }
-        #region Procesos
-
-        public async Task IniciarSecion()
-        {
-
-            await Navigation.PushAsync(new MainPage());
-            Mensaje = "Haz iniciado sesion con exito";
+            else
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", "Usuario o contraseña incorrectos", "OK");
+            }
 
         }
 
-        public async Task Registrar()
+        private async Task Registrar()
         {
-
             await Navigation.PushAsync(new Registrarte());
         }
-
-        #endregion
-
-
-        #region Comandos
-
-        public ICommand Iniciarcommand => new Command(async () => await IniciarSecion());
-        public ICommand Registrarcommand => new Command(async () => await Registrar());
-        #endregion
     }
 }

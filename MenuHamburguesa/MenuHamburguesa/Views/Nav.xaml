@@ -2,9 +2,10 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MenuHamburguesa.Nav"
-             Title="Nav"             BackgroundColor="#b4ff9a">
+             Title="Nav"
+             BackgroundColor="#E6F7FF">
 
-    <Grid BackgroundColor="#b4ff9a">
+    <Grid BackgroundColor="#E6F7FF">
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
             <RowDefinition Height="100"/>

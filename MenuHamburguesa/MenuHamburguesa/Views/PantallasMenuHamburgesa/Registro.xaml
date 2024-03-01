@@ -5,10 +5,8 @@
              Title="Registro">
     <Grid>
         <ScrollView>
-            <StackLayout BackgroundColor="#b4ff9a">
-                <Frame BorderColor="Black">
-                    <Label Text="Historial de Registros:" FontSize="Title" TextColor="Black" HorizontalOptions="Center"/>
-                </Frame>
+            <StackLayout BackgroundColor="#E6F7FF">
+              
 
                 <!--Aqui la vista de los registros -->
                 <Grid Margin="7" >
