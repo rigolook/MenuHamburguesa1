@@ -37,7 +37,7 @@
                         <TapGestureRecognizer Command="{Binding IrSensoresGascommand}"/>
                     </Frame.GestureRecognizers>
                 </Frame>
-            </StackLayout>
+            </StackLayout> 
         </Frame>
 
 
