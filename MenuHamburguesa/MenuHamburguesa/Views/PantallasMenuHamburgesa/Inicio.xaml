@@ -18,7 +18,6 @@
                        FontSize="60"
                        TranslationX="125"
                        TranslationY="-10"/>
-            
                 <Label Text="Despejado 30°/8°"
                        FontAttributes="Bold"
                        FontSize="20"
