@@ -1,5 +1,6 @@
 ﻿using MenuHamburguesa.Views;
 using MenuHamburguesa.Views.Pantallas;
+using MenuHamburguesa.Views.PantallasMenuHamburgesa;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -13,7 +14,7 @@ namespace MenuHamburguesa
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Login());
+            MainPage = new NavigationPage(new configuracionSensores());
             //MainPage = new NavigationPage(new SenGaz());
         }
 
