@@ -2,47 +2,78 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MenuHamburguesa.Views.Monitoreo"
-                         Title="Monitoreo">
-    <ScrollView>
-        <StackLayout BackgroundColor="#b4ff9a"> 
-
-            <ContentView Grid.Column="0" Grid.Row="0" Padding="0" Margin="40,40,10,10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-                <ContentView.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding IrVentiladorescommand}" />
-                </ContentView.GestureRecognizers>
-                <StackLayout Orientation="Horizontal">
-                    <Image Source="velocimetro.png" BackgroundColor="Transparent" HeightRequest="120" WidthRequest="120" />
-                    <Label Text="Ventiladores" FontAttributes="Bold" FontSize="45" TextColor="#00e400" />
-                </StackLayout>
-            </ContentView>
+             Title="Monitoreo">
+    <StackLayout Padding="0" BackgroundColor="#E6F7FF">
 
 
-            <ContentView Grid.Column="0" Grid.Row="0" Padding="0" Margin="40,40,10,10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-                <ContentView.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding IrTemperaturacommand}" />
-                </ContentView.GestureRecognizers>
-                <StackLayout Orientation="Horizontal">
-                    <Image Source="celsius.png" BackgroundColor="Transparent" HeightRequest="120" WidthRequest="120" />
-                    <Label Text="Sensores de temperatura" FontAttributes="Bold" FontSize="45" TextColor="#ff0000" />
-                </StackLayout>
-            </ContentView>
+        <Frame 
+           CornerRadius="40"
+           TranslationX="-155"
+           TranslationY="0"
+        HeightRequest="200"
+           Margin="180,70,100,-20">
+            <StackLayout VerticalOptions="CenterAndExpand" 
+                     HorizontalOptions="CenterAndExpand" >
+                <Label Text="Calidad de aire"
+                   FontSize="20"
+                   FontAttributes="Bold"/>
+
+                <Image Source="gaz.png" 
+                   BackgroundColor="Transparent"
+                   HeightRequest="90" 
+                   WidthRequest="80" />
+
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding IrSensoresGascommand}"/>
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+        </Frame>
+
+        <Frame 
+       CornerRadius="40"
+       TranslationX="70"
+        HeightRequest="200"
+       TranslationY="-230"
+       Margin="180,20,100,0">
+            <StackLayout VerticalOptions="CenterAndExpand" 
+                 HorizontalOptions="CenterAndExpand" >
+                <Label Text="Temperatura"
+               FontSize="20" 
+                   FontAttributes="Bold"/>
+                <Image Source="celsius.png"
+                   BackgroundColor="Transparent"
+                   HeightRequest="90" 
+                   WidthRequest="80" />
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding IrTemperaturacommand}"/>
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+        </Frame>
+        <Frame 
+           CornerRadius="40"
+           TranslationX="-20"
+           HeightRequest="200"
+           WidthRequest="200"
+           TranslationY="-245"
+           Margin="40,40,10,10">
+            <StackLayout VerticalOptions="CenterAndExpand" 
+                     HorizontalOptions="CenterAndExpand" >
+                <Label Text="Ventilador"
+                   FontSize="20" 
+                   TranslationX="-93"
+                   FontAttributes="Bold"/>
+                <Image Source="velocimetro.png"
+                   BackgroundColor="Transparent" 
+                   HeightRequest="100" 
+                   WidthRequest="190" 
+                   TranslationX="-140"
+                   />
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding IrVentiladorescommand}"/>
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+        </Frame>
 
 
-
-            <ContentView Grid.Column="0" Grid.Row="0" Padding="0" Margin="40,40,10,10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-                <ContentView.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding IrSensoresGascommand}" />
-                </ContentView.GestureRecognizers>
-                <StackLayout Orientation="Horizontal">
-                    <Image Source="gaz.png" BackgroundColor="Transparent" HeightRequest="120" WidthRequest="120" />
-                    <Label Text="Sensores de gaz" FontAttributes="Bold" FontSize="45" TextColor="#8f3f97" />
-                </StackLayout>
-            </ContentView>
-
-
-
-
-            <Label Text="Hecho por JERH"/>
-        </StackLayout>
-    </ScrollView>
+    </StackLayout>
 </ContentPage>

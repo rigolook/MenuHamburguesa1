@@ -27,7 +27,7 @@ namespace AirePuro.View
             await Task.Delay(200);
             await button.ScaleTo(1, 200, Easing.SinOut);
             button.BackgroundColor = Color.FromHex("#FEC100");
-            await DisplayAlert("Éxito", "Se registro correctamente.", "Aceptar");
+
         }
     }
 }
