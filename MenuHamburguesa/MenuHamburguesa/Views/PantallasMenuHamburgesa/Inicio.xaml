@@ -7,6 +7,8 @@
     <StackLayout Padding="0" BackgroundColor="#E6F7FF">
 
    
+        
+        
         <Frame CornerRadius="40"
                TranslationX="-155"
                TranslationY="0"
