@@ -49,6 +49,7 @@
                 </StackLayout.GestureRecognizers>
             </StackLayout>
         </Frame>
+      
         <Frame 
            CornerRadius="40"
            TranslationX="-20"

@@ -1,4 +1,5 @@
 ﻿using MenuHamburguesa.Models;
+using MenuHamburguesa.Simulacion;
 using MenuHamburguesa.Views.Pantallas;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,8 @@ namespace MenuHamburguesa.ViewModel
     class VMMonitoreo : BaseViewModel
     {
         #region variables
-        public List<MSenGaz> _SensoresTemp;
+        private MVentilador[] _Venti = new MVentilador[10];
+        public Ventiladoressim _VENTILADORES;//BORRAR
         #endregion
 
         public VMMonitoreo(INavigation naivigation)
@@ -20,25 +22,12 @@ namespace MenuHamburguesa.ViewModel
             Navigation = naivigation;
 
 
-            ///Esto se quitara despues 
-            _SensoresTemp = new List<MSenGaz>
-            {
-                new MSenGaz { Habitacion = "Cocina", Gaz ="Monoxido de carbono"},
-                new MSenGaz { Habitacion = "Cuarto de lavabo", Gaz ="Dioxido de carbono"}
-            };
+
+            InsertarSensor(MVentilador ventilador);
         }
 
-        #region Procesos
-        public List<MSenGaz> Lista
-        {
-            get { return _SensoresTemp; }
-            set
-            {
-                SetValue(ref _SensoresTemp, value);
-                OnpropertyChanged();
-
-            }
-        }
+        #region Objetos
+      
         #endregion
         #region Procesos
 
@@ -60,6 +49,11 @@ namespace MenuHamburguesa.ViewModel
 
             await Navigation.PushAsync(new SenosorTemp());
         }
+        public void InsertarSensor(MVentilador ventilador)
+        {
+
+            _VENTILADORES.Insertar(ventilador);
+        }
         #endregion
 
 
@@ -69,6 +63,8 @@ namespace MenuHamburguesa.ViewModel
         public ICommand IrSensoresGascommand => new Command(async () => await IrSensoresGas());
         public ICommand IrVentiladorescommand => new Command(async () => await IrVentiladores());
         public ICommand IrTemperaturacommand => new Command(async () => await IrTemperaturas());
+
+        public ICommand InsertarSensorcommand => new Command<MVentilador>((p) => InsertarSensor(p));
         #endregion
     }
 }

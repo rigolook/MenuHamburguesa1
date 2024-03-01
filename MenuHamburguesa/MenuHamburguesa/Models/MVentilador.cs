@@ -10,6 +10,6 @@ namespace MenuHamburguesa.Models
         public string Habitacion { get; set; }
         public string Rpm { get; set; }
         public bool Encendido { get; set; }
-       // public string Pin { get; set;}
+        public string ID { get; set;}
     }
 }
