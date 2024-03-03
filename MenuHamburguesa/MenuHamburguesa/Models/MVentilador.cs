@@ -4,12 +4,13 @@ using System.Text;
 
 namespace MenuHamburguesa.Models
 {
-   public class MVentilador
+    public class MVentilador
     {
-
+        public string ID { get; set; }
         public string Habitacion { get; set; }
+
         public string Rpm { get; set; }
         public bool Encendido { get; set; }
-        public string ID { get; set;}
+        // public string Pin { get; set; }
     }
 }

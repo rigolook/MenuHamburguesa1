@@ -14,7 +14,7 @@ namespace MenuHamburguesa
             InitializeComponent();
 
             MainPage = new NavigationPage(new Login());
-            //MainPage = new NavigationPage(new SenGaz());
+            //MainPage = new NavigationPage(new RegistrarSensores());
         }
 
         protected override void OnStart()

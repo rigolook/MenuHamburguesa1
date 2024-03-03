@@ -10,24 +10,23 @@ using Xamarin.Forms;
 
 namespace MenuHamburguesa.ViewModel
 {
-    class VMMonitoreo : BaseViewModel
+    public class VMMonitoreo : BaseViewModel
     {
         #region variables
-        private MVentilador[] _Venti = new MVentilador[10];
+
+    
         public Ventiladoressim _VENTILADORES;//BORRAR
+      
         #endregion
 
-        public VMMonitoreo(INavigation naivigation)
+        public VMMonitoreo(INavigation navigation)
         {
-            Navigation = naivigation;
-
-
-
-            InsertarSensor(MVentilador ventilador);
+            Navigation = navigation;
+           
         }
 
         #region Objetos
-      
+
         #endregion
         #region Procesos
 
@@ -49,11 +48,12 @@ namespace MenuHamburguesa.ViewModel
 
             await Navigation.PushAsync(new SenosorTemp());
         }
-        public void InsertarSensor(MVentilador ventilador)
+       
+        public async Task RegistrarSensor()
         {
-
-            _VENTILADORES.Insertar(ventilador);
+            await Navigation.PushAsync(new RegistrarSensores());
         }
+
         #endregion
 
 
@@ -64,7 +64,8 @@ namespace MenuHamburguesa.ViewModel
         public ICommand IrVentiladorescommand => new Command(async () => await IrVentiladores());
         public ICommand IrTemperaturacommand => new Command(async () => await IrTemperaturas());
 
-        public ICommand InsertarSensorcommand => new Command<MVentilador>((p) => InsertarSensor(p));
+       
+        public ICommand RegistrarSensorcommand => new Command(() => RegistrarSensor());
         #endregion
     }
 }

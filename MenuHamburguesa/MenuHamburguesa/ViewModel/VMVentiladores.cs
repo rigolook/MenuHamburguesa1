@@ -14,9 +14,9 @@ namespace MenuHamburguesa.ViewModel
     public class VMVentiladores : BaseViewModel
     {
         #region variables
-        public MVentilador[] _SensoresVentiladores = new MVentilador[10];
-        public Ventiladoressim _VENTILADORES;//BORRAR
-        public MVentilador[] kk = new MVentilador[10];
+        private List<MVentilador> _SensoresVentiladores;
+        private Ventiladoressim _VENTILADORES= Ventiladoressim.Instancia;//BORRAR
+      
         #endregion
 
         public VMVentiladores(INavigation navigation)
@@ -27,7 +27,7 @@ namespace MenuHamburguesa.ViewModel
         }
 
         #region Procesos
-        public MVentilador[] Lista
+        public List<MVentilador> Lista
         {
             get { return _SensoresVentiladores; }
             set
@@ -40,30 +40,20 @@ namespace MenuHamburguesa.ViewModel
         #endregion
         #region Procesos
 
-
-
         public async Task IrSensoresGas()
         {
-          
-
             await Navigation.PushAsync(new SenGaz());
         }
        
         public void ListarVentiladores()
         {
-           
-          
-
-            _VENTILADORES = Ventiladoressim.Instancia;
             Lista = _VENTILADORES.ObtenerAreglo();
         }
 
         #endregion
 
-
         #region Comandos
         public ICommand IrSensoresGascommand => new Command(async () => await IrSensoresGas());
-       
         #endregion
 
     }

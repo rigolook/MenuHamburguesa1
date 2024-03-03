@@ -1,4 +1,5 @@
 ﻿using MenuHamburguesa.Models;
+using MenuHamburguesa.Simulacion;
 using MenuHamburguesa.Views.Pantallas;
 using System;
 using System.Collections.Generic;
@@ -13,19 +14,16 @@ namespace MenuHamburguesa.ViewModel
     {
         #region variables
         public List<MSenGaz> _SensoresGaz;
+        private SenGazSim _SenGaz = SenGazSim.Instancia;//BORRAR
         #endregion
 
         public VMSenGaz(INavigation naivigation)
         {
             Navigation = naivigation;
 
-
+            ListarSenGaz();
             ///Esto se quitara despues 
-            _SensoresGaz = new List<MSenGaz>
-            {
-                new MSenGaz { Habitacion = "Cocina", Gaz ="Monoxido de carbono"},
-                new MSenGaz { Habitacion = "Cuarto de lavabo", Gaz ="Dioxido de carbono"}
-            };
+
         }
 
         #region Procesos
@@ -50,6 +48,10 @@ namespace MenuHamburguesa.ViewModel
             await Navigation.PushAsync(new SenGaz());
         }
 
+        public void ListarSenGaz()
+        {
+            Lista = _SenGaz.ObtenerAreglo();
+        }
         #endregion
 
 

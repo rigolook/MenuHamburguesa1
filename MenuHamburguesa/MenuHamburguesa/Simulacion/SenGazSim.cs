@@ -7,32 +7,32 @@ using Xamarin.Essentials;
 
 namespace MenuHamburguesa.Simulacion
 {
-    public class Ventiladoressim
+    public class SenGazSim
     {
         // private MVentilador[] _Venti=new MVentilador[11];
-        private List<MVentilador> listaVenti=new List<MVentilador>();
+        private List<MSenGaz> listaGaz=new List<MSenGaz>();
         private int Cont = -1;
-        private static Ventiladoressim _instanciaVentiladior;
+        private static SenGazSim _instanciaGaz;
 
-        public static Ventiladoressim Instancia
+        public static SenGazSim Instancia
         {
             get
             {
-                if (_instanciaVentiladior == null)
+                if (_instanciaGaz == null)
                 {
-                    _instanciaVentiladior = new Ventiladoressim();
+                    _instanciaGaz = new SenGazSim();
                 }
-                return _instanciaVentiladior;
+                return _instanciaGaz;
             }
         }
 
-        public bool Insertar(MVentilador _ventilador)
+        public bool Insertar(MSenGaz _ventilador)
         {
             Cont++;
 
             if (Cont <= 9)
             {
-                listaVenti.Add(_ventilador);
+                listaGaz.Add(_ventilador);
                 return true;
             }
             else
@@ -41,13 +41,13 @@ namespace MenuHamburguesa.Simulacion
 
         }
 
-        public void Actualizardatos(MVentilador _ventilador)
+        public void Actualizardatos(MSenGaz _ventilador)
         {
             for (int i = 0; i <= Cont; i++)
             {
-                if (listaVenti[i] != null && listaVenti[i].ID == _ventilador.ID)
+                if (listaGaz[i] != null && listaGaz[i].ID == _ventilador.ID)
                 {
-                    listaVenti[i] = _ventilador;
+                    listaGaz[i] = _ventilador;
                     break;
                 }
             }
@@ -58,24 +58,24 @@ namespace MenuHamburguesa.Simulacion
             int Borarr = 0;
             for (int x = 0; x <= Cont; x++)
             {
-                if (listaVenti[x].ID == ID)
+                if (listaGaz[x].ID == ID)
                 {
-                    listaVenti[x] = null;
+                    listaGaz[x] = null;
                     Borarr = x;
                     break;
                 }
             }
             for (int x = Borarr; x <= Cont; x++)
             {
-                listaVenti[x] = listaVenti[x + 1];
+                listaGaz[x] = listaGaz[x + 1];
             }
             Cont--;
         }
 
-        public List<MVentilador> ObtenerAreglo()
+        public List<MSenGaz> ObtenerAreglo()
         {
            
-            return listaVenti;
+            return listaGaz;
         }
     }
 }

@@ -10,14 +10,15 @@ using Xamarin.Forms.Xaml;
 
 namespace MenuHamburguesa.Views.Pantallas
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class SenGaz : ContentPage
-	{
-		public SenGaz ()
-		{
-			InitializeComponent ();
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class RegistrarSensores : ContentPage
+    {
+        public RegistrarSensores()
+        {
+            InitializeComponent();
             //NavigationPage.SetHasBackButton(this, false);
-            BindingContext = new VMSenGaz(Navigation);
+            BindingContext = new VMRegistrarSensores(Navigation);
         }
-	}
+     
+    }
 }

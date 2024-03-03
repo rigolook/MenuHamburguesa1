@@ -1,4 +1,5 @@
 ﻿using MenuHamburguesa.Models;
+using MenuHamburguesa.Simulacion;
 using MenuHamburguesa.Views.Pantallas;
 using System;
 using System.Collections.Generic;
@@ -13,19 +14,16 @@ namespace MenuHamburguesa.ViewModel
     {
         #region variables
         public List<MSenTemp> _SensoresVentiladores;
+        public SenTepsim _SenTep = SenTepsim.Instancia;//BORRAR
         #endregion
 
         public VMSensorTemp(INavigation naivigation)
         {
             Navigation = naivigation;
 
+            ListarSenTemp();
+  
 
-            ///Esto se quitara despues 
-            _SensoresVentiladores = new List<MSenTemp>
-            {
-                new MSenTemp { Habitacion = "Cocina", Temp =$"Temperatura: {32}°",Humedad=$"Humedad: {30}%" },
-                new MSenTemp { Habitacion = "Cuarto de lavabo", Temp =$"Temperatura: {16}",Humedad=$"Humedad: {30}%"}
-            };
         }
 
         #region Procesos
@@ -42,6 +40,10 @@ namespace MenuHamburguesa.ViewModel
         #endregion
         #region Procesos
 
+        public void ListarSenTemp()
+        {
+            Lista = _SenTep.ObtenerAreglo();
+        }
 
 
         public async Task IrSensoresGas()
