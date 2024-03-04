@@ -13,11 +13,19 @@ namespace MenuHamburguesa.Views.Pantallas
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Ventiladores : ContentPage
 	{
+		VMVentiladores vM;
 		public Ventiladores()
 		{
 			InitializeComponent ();
             //NavigationPage.SetHasBackButton(this, false);
-            BindingContext = new VMVentiladores(Navigation);
+            vM = new VMVentiladores(Navigation);
+            BindingContext = vM;
+            this.Appearing += Listaventiladores_Appearing;
         }
-	}
+        private async void Listaventiladores_Appearing(object sender, EventArgs e)
+        {
+            await vM.ListarVentiladores();
+        }
+
+    }
 }
