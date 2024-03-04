@@ -2,102 +2,82 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MenuHamburguesa.Views.Pantallas.EditarModulo"
-             Title="Editar Modulo">
-    <Grid RowDefinitions="80,*"
-          BackgroundColor="#1d1d1d">
-       
+             Title="Editar Modulo"
+             BackgroundColor="#E6F7FF">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand" Padding="60" WidthRequest="3">
 
-        <StackLayout Grid.Row="1" Margin="10">
-            <!--ID-->
-            <StackLayout Orientation="Horizontal">
-                <Label Text="ID: "
-                       TextColor="White" 
-                       FontAttributes="Bold"
-                       VerticalOptions="Center"
-                       FontSize="18"/>
+            <Frame  CornerRadius="100" 
+                 Margin="0,0,0,0" 
+                 WidthRequest="200"
+                 HeightRequest="200"
+                 Padding="0"
+                 HasShadow="False"
+                 BackgroundColor="Transparent">
 
-                <Entry Placeholder="ID" 
-                       FontAttributes="Bold" 
-                       TextColor="#ffeb72"
-                       PlaceholderColor="White"
-                       TextTransform="Lowercase"
-                       HorizontalOptions="StartAndExpand"
-                       Text="{Binding ID}"
-                       IsEnabled="False"
-                       />
-            </StackLayout>
-            
-            <!--Habitacion-->
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Habitacion: "
-                       TextColor="White" 
-                       FontAttributes="Bold"
-                       VerticalOptions="Center"
-                       FontSize="18"/>
-
-                <Entry Placeholder="Habitacion" 
-                       FontAttributes="Bold" 
-                       TextColor="#ffeb72"
-                       PlaceholderColor="White"
-                       TextTransform="Lowercase"
-                       HorizontalOptions="StartAndExpand"
-                       Text="{Binding Habitacion}"
-                       />
-            </StackLayout>
-
-  
-            <!-- Sensor picker -->
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Componente: "
-                       TextColor="White" 
-                       FontAttributes="Bold"
-                       VerticalOptions="Center"
-                       FontSize="18"/>
-
-                <Picker x:Name="sensorPicker"
-                        Title="Selecciona un sensor"
-                        FontAttributes="Bold"
-                        TextColor="#ffeb72"
-                        ItemsSource="{Binding _ListaSensores}"
-                        ItemDisplayBinding="{Binding Value}"
-                        SelectedItem="{Binding SelectedSensor, Mode=TwoWay}"
-                        HorizontalOptions="StartAndExpand"/>
-
-              
-
-            </StackLayout>
-           
-
-
-
-            <!--Btn-->
-            <Frame HorizontalOptions="Center"
-                   Padding="6"
-                   Margin="0,10,0,0"
-                   CornerRadius="15"
-                   HasShadow="False"
-                   BackgroundColor="#FEC100">
-
-                <Button
-                    Text="+"
-                    HorizontalOptions="Center"
-                    BackgroundColor="#FEC100"
-                    BorderColor="#FFE488"
-                    BorderWidth="6"
-                    CornerRadius="15"
-                    FontSize="25"
-                    WidthRequest="60"
-                    HeightRequest="60"
-                    Command="{Binding EditarModuloSensorcommand}"/>
             </Frame>
+            <Label Text="ID"
+                TextColor="Black" 
+                FontSize="20"/>
 
-        
+            <Entry Placeholder="Ingresa el ID"
+                PlaceholderColor="#6699CC"
+                BackgroundColor="Transparent"
+                TextColor="#333333" 
+                   IsEnabled="False"
+                Margin="0,0,0,30" 
+                Text="{Binding ID}"/>
 
-                <Button  Text="-"
-                         Command="{Binding EliminarModuloSensorcommand}"/>
-         
-            
+            <Label Text="Habitacion"
+                TextColor="Black" 
+                FontSize="20"
+                 Margin="0,0,0,0"/>
+            <Entry Placeholder="Habitacion" 
+                PlaceholderColor="#6699CC"
+                BackgroundColor="Transparent"
+                TextColor="Black" 
+                Margin="0,0,0,10" 
+                Text="{Binding Habitacion}" />
+            <Label Text="Componente"
+                TextColor="Black" 
+                FontSize="20"
+                Margin="0,0,0,0"/>
+
+            <Picker x:Name="SensorPicker"
+                     Title="Selecciona un sensor"
+                     FontAttributes="Bold"
+                     TextColor="#ffeb72"
+                     ItemsSource="{Binding _ListaSensores}"
+                    ItemDisplayBinding="{Binding Value}"
+                    SelectedItem="{Binding SelectedSensor, Mode=TwoWay}"
+                     HorizontalOptions="StartAndExpand"/>
+
+            <Button 
+                 Text="+" 
+                 BackgroundColor="#6699CC" 
+                 TextColor="White" 
+                 CornerRadius="100"
+                 FontSize="30"
+                 HeightRequest="70"
+                 WidthRequest="-12"
+                 TranslationX="200"
+                 TranslationY="120"
+                 Margin="60,30,160,0"
+                 Command="{Binding EditarModuloSensorcommand}">
+            </Button>
+            <Button  Text="-"
+                      BackgroundColor="Red" 
+                     TextColor="White" 
+                     CornerRadius="100"
+                     FontSize="30"
+                     HeightRequest="70"
+                     WidthRequest="-12"
+                     TranslationX="-80"
+                     TranslationY="11"
+                     Margin="60,30,160,0"
+                     Command="{Binding EliminarModuloSensorcommand}"/>
+
         </StackLayout>
-    </Grid>
+    </ContentPage.Content>
 
 </ContentPage>

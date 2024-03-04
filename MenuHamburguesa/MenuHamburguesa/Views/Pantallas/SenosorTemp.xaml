@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MenuHamburguesa.Views.Pantallas.SenosorTemp"
-             Title="Sensores de Temperatura">
+             Title="Sensores de Temperatura"
+             BackgroundColor="#E6F7FF">
     <StackLayout>
         <Grid RowDefinitions="0,*" >
 
@@ -21,7 +22,7 @@
 
                     <Grid RowDefinitions="100, *" Margin="10,10,0,0">
 
-                        <Frame Grid.Row="1" WidthRequest="400" HeightRequest="120" HorizontalOptions="Center" CornerRadius="15" Margin="0,-80,10,0" 
+                        <Frame Grid.Row="1" WidthRequest="400" HeightRequest="120" Padding="30" HorizontalOptions="Center" CornerRadius="15" Margin="20,-70,20,0" 
                                BackgroundColor="#5db6e7" HasShadow="False">
 
                             <Grid>
