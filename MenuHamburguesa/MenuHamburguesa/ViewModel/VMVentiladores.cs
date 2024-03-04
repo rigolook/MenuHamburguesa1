@@ -6,26 +6,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
+using MenuHamburguesa.Simulacion;
+using System.Collections;
 
 namespace MenuHamburguesa.ViewModel
 {
     public class VMVentiladores : BaseViewModel
     {
         #region variables
-        public List<MVentilador> _SensoresVentiladores;
+        private List<MVentilador> _SensoresVentiladores;
+       
+      
         #endregion
 
-        public VMVentiladores(INavigation naivigation)
+        public VMVentiladores(INavigation navigation)
         {
-            Navigation = naivigation;
-
-
-            ///Esto se quitara despues 
-            _SensoresVentiladores = new List<MVentilador>
-            {
-                new MVentilador { Habitacion = "Cocina", Rpm =$"Rpm: {3200}",Encendido=true},
-                new MVentilador { Habitacion = "Cuarto de lavabo", Rpm =$"Rpm: {000}",Encendido=false}
-            };
+            Navigation = navigation;
+          
+            ListarVentiladores();
         }
 
         #region Procesos
@@ -42,21 +40,27 @@ namespace MenuHamburguesa.ViewModel
         #endregion
         #region Procesos
 
-
-
         public async Task IrSensoresGas()
         {
-
             await Navigation.PushAsync(new SenGaz());
+        }
+       
+        public async Task ListarVentiladores()
+        {
+            var _VENTILADORES = Ventiladoressim.Instancia;//BORRAR
+            Lista = _VENTILADORES.ObtenerAreglo();
+        }
+        public async Task IraEditar(MVentilador _modulo)
+        {
+            await Navigation.PushAsync(new EditarModulo(_modulo));
         }
 
         #endregion
 
-
         #region Comandos
-
-
         public ICommand IrSensoresGascommand => new Command(async () => await IrSensoresGas());
+        public ICommand IraEditarcommand => new Command<MVentilador>(async (p) => await IraEditar(p));
         #endregion
+
     }
 }

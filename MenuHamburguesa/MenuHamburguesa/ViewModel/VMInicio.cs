@@ -1,5 +1,4 @@
 ﻿using MenuHamburguesa.Models;
-using MenuHamburguesa.Simulacion;
 using MenuHamburguesa.Views.Pantallas;
 using System;
 using System.Collections.Generic;
@@ -10,26 +9,41 @@ using Xamarin.Forms;
 
 namespace MenuHamburguesa.ViewModel
 {
-    public class VMMonitoreo : BaseViewModel
+    public class VMInicio : BaseViewModel
     {
         #region variables
-
-    
-        public Ventiladoressim _VENTILADORES;//BORRAR
-      
+        public List<MSenGaz> _SensoresTemp;
         #endregion
 
-        public VMMonitoreo(INavigation navigation)
+        public VMInicio(INavigation naivigation)
         {
-            Navigation = navigation;
-           
+            Navigation = naivigation;
+
+
+            ///Esto se quitara despues 
+            _SensoresTemp = new List<MSenGaz>
+            {
+                new MSenGaz { Habitacion = "Cocina", Gaz ="Monoxido de carbono"},
+                new MSenGaz { Habitacion = "Cuarto de lavabo", Gaz ="Dioxido de carbono"}
+            };
         }
 
-        #region Objetos
+        #region OBJETOS
+        public List<MSenGaz> Lista
+        {
+            get { return _SensoresTemp; }
+            set
+            {
+                SetValue(ref _SensoresTemp, value);
+                OnpropertyChanged();
 
+            }
+        }
         #endregion
+        #region PROCESO
 
-        #region Procesos
+
+
         public async Task IrSensoresGas()
         {
 
@@ -46,12 +60,6 @@ namespace MenuHamburguesa.ViewModel
 
             await Navigation.PushAsync(new SenosorTemp());
         }
-       
-        public async Task RegistrarSensor()
-        {
-            await Navigation.PushAsync(new RegistrarSensores());
-        }
-
         #endregion
 
 
@@ -61,9 +69,6 @@ namespace MenuHamburguesa.ViewModel
         public ICommand IrSensoresGascommand => new Command(async () => await IrSensoresGas());
         public ICommand IrVentiladorescommand => new Command(async () => await IrVentiladores());
         public ICommand IrTemperaturacommand => new Command(async () => await IrTemperaturas());
-
-       
-        public ICommand RegistrarSensorcommand => new Command(() => RegistrarSensor());
         #endregion
     }
 }
