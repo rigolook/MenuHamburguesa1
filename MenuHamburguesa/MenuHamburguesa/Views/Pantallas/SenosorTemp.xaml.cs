@@ -13,11 +13,19 @@ namespace MenuHamburguesa.Views.Pantallas
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class SenosorTemp : ContentPage
 	{
-		public SenosorTemp()
+
+		VMSensorTemp vM;
+        public SenosorTemp()
 		{
 			InitializeComponent ();
-            //NavigationPage.SetHasBackButton(this, false);
-            BindingContext = new VMSensorTemp(Navigation);
+			//NavigationPage.SetHasBackButton(this, false);
+			vM = new VMSensorTemp(Navigation);
+            BindingContext = vM;
+            this.Appearing += ListaSenTemp_Appearing;
         }
-	}
+        private async void ListaSenTemp_Appearing(object sender, EventArgs e)
+        {
+            await vM.ListarSenTemp();
+        }
+    }
 }

@@ -53,23 +53,18 @@ namespace MenuHamburguesa.Simulacion
             }
         }
 
-        public void EliminarDatos(string ID)
+        public bool EliminarDatos(string ID)
         {
-            int Borarr = 0;
             for (int x = 0; x <= Cont; x++)
             {
                 if (listaTemp[x].ID == ID)
                 {
-                    listaTemp[x] = null;
-                    Borarr = x;
-                    break;
+                    listaTemp.RemoveAt(x);
+                    Cont--;
+                    return true;
                 }
             }
-            for (int x = Borarr; x <= Cont; x++)
-            {
-                listaTemp[x] = listaTemp[x + 1];
-            }
-            Cont--;
+            return false;
         }
 
         public List<MSenTemp> ObtenerAreglo()

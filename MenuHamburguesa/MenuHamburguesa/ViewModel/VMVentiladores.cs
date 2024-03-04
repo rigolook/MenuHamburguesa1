@@ -15,7 +15,7 @@ namespace MenuHamburguesa.ViewModel
     {
         #region variables
         private List<MVentilador> _SensoresVentiladores;
-        private Ventiladoressim _VENTILADORES= Ventiladoressim.Instancia;//BORRAR
+       
       
         #endregion
 
@@ -45,15 +45,21 @@ namespace MenuHamburguesa.ViewModel
             await Navigation.PushAsync(new SenGaz());
         }
        
-        public void ListarVentiladores()
+        public async Task ListarVentiladores()
         {
+            var _VENTILADORES = Ventiladoressim.Instancia;//BORRAR
             Lista = _VENTILADORES.ObtenerAreglo();
+        }
+        public async Task IraEditar(MVentilador _modulo)
+        {
+            await Navigation.PushAsync(new EditarModulo(_modulo));
         }
 
         #endregion
 
         #region Comandos
         public ICommand IrSensoresGascommand => new Command(async () => await IrSensoresGas());
+        public ICommand IraEditarcommand => new Command<MVentilador>(async (p) => await IraEditar(p));
         #endregion
 
     }

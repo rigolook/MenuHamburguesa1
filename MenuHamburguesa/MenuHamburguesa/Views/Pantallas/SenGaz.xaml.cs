@@ -13,11 +13,18 @@ namespace MenuHamburguesa.Views.Pantallas
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class SenGaz : ContentPage
 	{
-		public SenGaz ()
+		VMSenGaz vM;
+        public SenGaz ()
 		{
 			InitializeComponent ();
             //NavigationPage.SetHasBackButton(this, false);
-            BindingContext = new VMSenGaz(Navigation);
+            vM = new VMSenGaz(Navigation);
+            BindingContext = vM;
+            this.Appearing += ListaSenGaz_Appearing;
         }
-	}
+        private async void ListaSenGaz_Appearing(object sender, EventArgs e)
+        {
+            await vM.ListarSenGaz();
+        }
+    }
 }

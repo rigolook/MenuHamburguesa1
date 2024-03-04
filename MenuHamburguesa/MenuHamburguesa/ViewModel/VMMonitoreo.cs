@@ -28,10 +28,8 @@ namespace MenuHamburguesa.ViewModel
         #region Objetos
 
         #endregion
+
         #region Procesos
-
-
-
         public async Task IrSensoresGas()
         {
 

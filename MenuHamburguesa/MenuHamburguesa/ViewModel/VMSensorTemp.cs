@@ -14,7 +14,7 @@ namespace MenuHamburguesa.ViewModel
     {
         #region variables
         public List<MSenTemp> _SensoresVentiladores;
-        public SenTepsim _SenTep = SenTepsim.Instancia;//BORRAR
+        
         #endregion
 
         public VMSensorTemp(INavigation naivigation)
@@ -40,8 +40,9 @@ namespace MenuHamburguesa.ViewModel
         #endregion
         #region Procesos
 
-        public void ListarSenTemp()
+        public async Task ListarSenTemp()
         {
+            var _SenTep = SenTepsim.Instancia;//BORRAR
             Lista = _SenTep.ObtenerAreglo();
         }
 
@@ -51,6 +52,10 @@ namespace MenuHamburguesa.ViewModel
 
             await Navigation.PushAsync(new SenGaz());
         }
+        public async Task IraEditar(MSenTemp _modulo)
+        {
+            await Navigation.PushAsync(new EditarModulo(_modulo));
+        }
 
         #endregion
 
@@ -59,6 +64,7 @@ namespace MenuHamburguesa.ViewModel
 
 
         public ICommand IrSensoresGascommand => new Command(async () => await IrSensoresGas());
+        public ICommand IraEditarcommand => new Command<MSenTemp>(async (p) => await IraEditar(p));
         #endregion
     }
 }

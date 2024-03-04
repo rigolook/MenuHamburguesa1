@@ -41,35 +41,32 @@ namespace MenuHamburguesa.Simulacion
 
         }
 
-        public void Actualizardatos(MVentilador _ventilador)
+        public bool Actualizardatos(MVentilador _ventilador)
         {
             for (int i = 0; i <= Cont; i++)
             {
                 if (listaVenti[i] != null && listaVenti[i].ID == _ventilador.ID)
                 {
                     listaVenti[i] = _ventilador;
-                    break;
+                    return true;
                 }
             }
+
+            return false;
         }
 
-        public void EliminarDatos(string ID)
+        public bool EliminarDatos(string ID)
         {
-            int Borarr = 0;
             for (int x = 0; x <= Cont; x++)
             {
                 if (listaVenti[x].ID == ID)
                 {
-                    listaVenti[x] = null;
-                    Borarr = x;
-                    break;
+                    listaVenti.RemoveAt(x); 
+                    Cont--;
+                    return true;
                 }
             }
-            for (int x = Borarr; x <= Cont; x++)
-            {
-                listaVenti[x] = listaVenti[x + 1];
-            }
-            Cont--;
+            return false; 
         }
 
         public List<MVentilador> ObtenerAreglo()

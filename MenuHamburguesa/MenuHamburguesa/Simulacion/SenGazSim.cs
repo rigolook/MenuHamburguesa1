@@ -53,23 +53,18 @@ namespace MenuHamburguesa.Simulacion
             }
         }
 
-        public void EliminarDatos(string ID)
+        public bool EliminarDatos(string ID)
         {
-            int Borarr = 0;
             for (int x = 0; x <= Cont; x++)
             {
                 if (listaGaz[x].ID == ID)
                 {
-                    listaGaz[x] = null;
-                    Borarr = x;
-                    break;
+                    listaGaz.RemoveAt(x);
+                    Cont--;
+                    return true;
                 }
             }
-            for (int x = Borarr; x <= Cont; x++)
-            {
-                listaGaz[x] = listaGaz[x + 1];
-            }
-            Cont--;
+            return false;
         }
 
         public List<MSenGaz> ObtenerAreglo()

@@ -14,7 +14,7 @@ namespace MenuHamburguesa.ViewModel
     {
         #region variables
         public List<MSenGaz> _SensoresGaz;
-        private SenGazSim _SenGaz = SenGazSim.Instancia;//BORRAR
+       
         #endregion
 
         public VMSenGaz(INavigation naivigation)
@@ -48,9 +48,14 @@ namespace MenuHamburguesa.ViewModel
             await Navigation.PushAsync(new SenGaz());
         }
 
-        public void ListarSenGaz()
+        public async Task ListarSenGaz()
         {
+            var _SenGaz = SenGazSim.Instancia;//BORRAR
             Lista = _SenGaz.ObtenerAreglo();
+        }
+        public async Task IraEditar(MSenGaz _modulo)
+        {
+            await Navigation.PushAsync(new EditarModulo(_modulo));
         }
         #endregion
 
@@ -59,6 +64,7 @@ namespace MenuHamburguesa.ViewModel
 
 
         public ICommand IrSensoresGascommand => new Command(async () => await IrSensoresGas());
+        public ICommand IraEditarcommand => new Command<MSenGaz>(async (p) => await IraEditar(p));
         #endregion
     }
 }
