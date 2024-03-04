@@ -1,6 +1,7 @@
 ﻿
 using MenuHamburguesa.Models;
 using MenuHamburguesa.Views.Pantallas;
+using MenuHamburguesa.Views.PantallasMenuHamburgesa;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -14,13 +15,13 @@ namespace MenuHamburguesa.ViewModel
     {
         #region VARIABLES
         string _Texto;
-        List<MHistorial> Registros;
+        List<VMhistorial> Registros;
 
         //list provicional
 
         #endregion
         #region OBJETOS
-        public List<MHistorial> Lista
+        public List<VMhistorial> Lista
         {
             get { return Registros; }
             set
@@ -49,11 +50,11 @@ namespace MenuHamburguesa.ViewModel
         }
         public async Task VerMasLabelTapped()
         {
-            await Navigation.PushAsync(new historialAparte1());
+            await Navigation.PushAsync(new Historial1());
         }
         public async Task VerMasLabelTapped2()
         {
-            await Navigation.PushAsync(new historialAparte2());
+            await Navigation.PushAsync(new Historial2());
         }
 
         #endregion
@@ -67,12 +68,18 @@ namespace MenuHamburguesa.ViewModel
         public VMhistorial(INavigation navigation)
         {
             Navigation = navigation;
-
-            Registros = new List<MHistorial>
+            Registros = new List<VMhistorial>();
             {
-                new MHistorial { Ubicacion = "Cocina", FechaHora ="24/02/2024",Temperatura="25°",NombreGas="Oxigeno",GasDetectado="No",RPM="30"},
-                new MHistorial { Ubicacion = "Sala", FechaHora ="13/11/2024",Temperatura="35°",NombreGas="Dioxido de carbono",GasDetectado="Si",RPM="60"}
+                new MHistorial { Ubicacion = "Cocina", FechaHora = "24/02/2024", Temperatura = "25°", NombreGas = "Oxigeno", GasDetectado = "No", RPM = "30" };
+                new MHistorial { Ubicacion = "Sala", FechaHora = "14/12/2024", Temperatura = "30°", NombreGas = "Dioxido de carbono", GasDetectado = "Si", RPM = "60" };
             };
+
+
+            //Registros = new List<MHistorial>
+            //{
+            //    new MHistorial { Ubicacion = "Cocina", FechaHora ="24/02/2024",Temperatura="25°",NombreGas="Oxigeno",GasDetectado="No",RPM="30"},
+            //    new MHistorial { Ubicacion = "Sala", FechaHora ="13/11/2024",Temperatura="35°",NombreGas="Dioxido de carbono",GasDetectado="Si",RPM="60"}
+            //};
 
         }
         #endregion
