@@ -32,12 +32,7 @@ namespace MenuHamburguesa.ViewModel
 
 
 
-        public async Task GoInicio()
-        {
-            App.MasterDet.IsPresented = false;
-            await App.MasterDet.Detail.Navigation.PushAsync(new Inicio());
-        }
-
+      
         public async Task GoMonitoreo()
         {
 
@@ -74,7 +69,6 @@ namespace MenuHamburguesa.ViewModel
         #region Comandos
 
 
-        public ICommand IrIniciocommand => new Command(async () => await GoInicio());
         public ICommand IrMonitoreocommand => new Command(async () => await GoMonitoreo());
         public ICommand IrRegistrocommand => new Command(async () => await GoRegistro());
         public ICommand IrConfcommand => new Command(async () => await GoConfig());

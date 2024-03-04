@@ -17,7 +17,8 @@
                            FontSize="18" 
                            TextColor="Black"
                            FontAttributes="Bold"/>
-                    <Button Text="ON/OFF" 
+                    <Button x:Name="MiBoton"
+                            Text="ON/OFF" 
                             FontSize="13"
                             BackgroundColor="#bae0f5"
                             Grid.Column="1"
@@ -27,7 +28,9 @@
                             BorderColor="CornflowerBlue" 
                             HeightRequest="5"
                             WidthRequest="5" 
-                            Margin="40,0,0,0"/>
+                            Margin="40,0,0,0" 
+                            Command="{Binding VentiladorAutomaticoCommand}"
+                            CommandParameter="{x:Reference MiBoton}"/>
                 </Grid>
             </Frame>
             <Grid>
@@ -50,7 +53,8 @@
                                      BorderColor="CornflowerBlue" 
                                      HeightRequest="5"
                                      WidthRequest="5" 
-                                     Margin="0,-20,0,20">
+                                     Margin="0,-20,0,20"
+                                     Command="{Binding IncrementoHorascommand}">
                             <ImageButton.Triggers>
                                 <EventTrigger Event="Clicked">
                                     <local:Configuracion/>
@@ -74,7 +78,8 @@
                                     BorderColor="CornflowerBlue" 
                                     HeightRequest="5" 
                                     WidthRequest="5" 
-                                    Margin="0,-20,0,20">    
+                                    Margin="0,-20,0,20"
+                                    Command="{Binding QuitaHorascommand}">    
                             <ImageButton.Triggers>
                                 <EventTrigger Event="Clicked">
                                     <local:Configuracion/>
@@ -88,7 +93,7 @@
                                Grid.Row="2"
                                HeightRequest="30"
                                WidthRequest="50">
-                            <Label Text="00:00:00" 
+                            <Label Text="{Binding HorasVentilador}" 
                                    Margin="5" 
                                    TextColor="#fff"
                                    FontSize="15" 

@@ -6,50 +6,58 @@
     <Grid>
         <ScrollView>
             <StackLayout BackgroundColor="#E6F7FF">
-              
-
                 <!--Aqui la vista de los registros -->
                 <Grid Margin="7" >
                     <Frame Grid.Row="0" WidthRequest="350"
-                                    HorizontalOptions="Center"
-                                    CornerRadius="15"
-                                    Margin="0,0,0,0"
-                                    BorderColor="#ADF7B6"
-                                    BackgroundColor="#FFC09F">
+                                HorizontalOptions="Center"
+                                CornerRadius="15"
+                                Margin="0,0,0,0"
+                                BorderColor="#ADF7B6"
+                                BackgroundColor="#FFC09F">
                         <StackLayout Margin="0,30,0,0">
-                            <Label Text="Ubicacion: Sala" HorizontalOptions="Center" VerticalOptions="Start" FontAttributes="Bold,Italic" FontSize="20"/>
+                            <Grid>
+                                <Label Text="Ubicacion: Sala" HorizontalOptions="Center" Grid.Row="0" Grid.Column="0" FontAttributes="Bold,Italic" FontSize="20"/>
 
-                            <Label Text="Fecha y hora: 20/02/2024 13:00" HorizontalOptions="Center" VerticalOptions="Start" FontAttributes="Bold,Italic" FontSize="20"/>
-
-                            <Label Text="Temperatura: 25°" HorizontalOptions="Center" VerticalOptions="Start" FontAttributes="Bold,Italic" FontSize="20"/>
-
-                            <Label Text="Gas detectado: Oxigeno" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold,Italic" FontSize="20"/>
-
-                            <Label Text="Gas detectado: No" HorizontalOptions="Center" VerticalOptions="End" FontAttributes="Bold,Italic" FontSize="20"/>
-
-                            <Label Text="RPM: 30" HorizontalOptions="Center" VerticalOptions="End" FontAttributes="Bold,Italic" FontSize="20"/>
+                                <Label Text="Ver más"
+                                HorizontalOptions="Center"
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                FontAttributes="Bold,Italic"
+                                FontSize="20"
+                                TextColor="Blue"
+                                >
+                                    <!-- Aquí establecemos el Binding del evento Tapped al comando VerMasLabelCommand del ViewModel -->
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding VerMasLabelTappedcommand}" CommandParameter="{Binding .}" />
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </Grid>
                         </StackLayout>
                     </Frame>
 
                     <Frame Grid.Row="1" WidthRequest="350"
-                                    HorizontalOptions="Center"
-                                    CornerRadius="15"
-                                    Margin="0,0,0,0"
-                                    BorderColor="#ADF7B6"
-                                    BackgroundColor="#FFC09F">
+                                HorizontalOptions="Center"
+                                CornerRadius="15"
+                                Margin="0,0,0,0"
+                                BorderColor="#ADF7B6"
+                                BackgroundColor="#FFC09F">
                         <StackLayout Margin="0,30,0,0">
-                            <Label Text="Ubicacion: Habitacion principal" HorizontalOptions="Center" VerticalOptions="Start" FontAttributes="Bold,Italic" FontSize="20"/>
+                            <Grid>
+                                <Label Text="Ubicacion: Sala" HorizontalOptions="Center" Grid.Row="0" Grid.Column="0" FontAttributes="Bold,Italic" FontSize="20"/>
 
-                            <Label Text="Fecha y hora: 21/02/2024 9:33" HorizontalOptions="Center" VerticalOptions="Start" FontAttributes="Bold,Italic" FontSize="20"/>
-
-                            <Label Text="Temperatura: 35°" HorizontalOptions="Center" VerticalOptions="Start" FontAttributes="Bold,Italic" FontSize="20"/>
-
-                            <Label Text="Gas detectado: Dioxido de carbono" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold,Italic" FontSize="20"/>
-
-                            <Label Text="Gas detectado: Si" HorizontalOptions="Center" VerticalOptions="End" FontAttributes="Bold,Italic" FontSize="20"/>
-
-                            <Label Text="RPM: 66" HorizontalOptions="Center" VerticalOptions="End" FontAttributes="Bold,Italic" FontSize="20"/>
-
+                                <Label Text="Ver más"
+                                HorizontalOptions="Center"
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                FontAttributes="Bold,Italic"
+                                FontSize="20"
+                                TextColor="Blue">
+                                    <!-- Aquí establecemos el Binding del evento Tapped al comando VerMasLabelCommand del ViewModel -->
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding VerMasLabelTapped2command}" CommandParameter="{Binding .}" />
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </Grid>
                         </StackLayout>
                     </Frame>
                 </Grid>

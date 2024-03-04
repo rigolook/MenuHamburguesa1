@@ -12,7 +12,6 @@
             <RowDefinition Height="100"/>
             <RowDefinition Height="100"/>
             <RowDefinition Height="100"/>
-            <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -21,17 +20,8 @@
 
         </Grid.ColumnDefinitions>
 
-        <ContentView Grid.Column="0" Grid.Row="0"  Padding="0" Margin="40,40,10,10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <ContentView.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding IrIniciocommand}"/>
-            </ContentView.GestureRecognizers>
-            <StackLayout Orientation="Horizontal">
-                <Image x:Name="inicio" Source="inicio.png" BackgroundColor="Transparent"/>
-                <Label Text="Iniciar Sesión" FontAttributes="Bold" FontSize="20" TextColor="#ff9000"/>
-            </StackLayout>
-        </ContentView>
 
-        <ContentView Grid.Column="0" Grid.Row="1" Padding="0" Margin="40,40,10,10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <ContentView Grid.Column="0" Grid.Row="0" Padding="0" Margin="40,40,10,10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
             <ContentView.GestureRecognizers>
                 <TapGestureRecognizer Command="{Binding IrMonitoreocommand}"/>
             </ContentView.GestureRecognizers>
@@ -41,7 +31,7 @@
             </StackLayout>
         </ContentView>
 
-        <ContentView Grid.Column="0" Grid.Row="2" Padding="0" Margin="40,40,10,10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <ContentView Grid.Column="0" Grid.Row="1" Padding="0" Margin="40,40,10,10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
             <ContentView.GestureRecognizers>
                 <TapGestureRecognizer Command="{Binding IrRegistrocommand}"/>
             </ContentView.GestureRecognizers>
@@ -52,7 +42,7 @@
         </ContentView>
 
 
-        <ContentView Grid.Column="0" Grid.Row="3" Padding="0" Margin="40,40,10,10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <ContentView Grid.Column="0" Grid.Row="2" Padding="0" Margin="40,40,10,10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
             <ContentView.GestureRecognizers>
                 <TapGestureRecognizer Command="{Binding IrConfcommand}"/>
             </ContentView.GestureRecognizers>
@@ -62,7 +52,7 @@
             </StackLayout>
         </ContentView>
 
-        <ContentView Grid.Column="0" Grid.Row="4" Padding="0" Margin="40,40,10,10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <ContentView Grid.Column="0" Grid.Row="3" Padding="0" Margin="40,40,10,10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
             <ContentView.GestureRecognizers>
                 <TapGestureRecognizer Command="{Binding IrConfSensorcommand}"/>
             </ContentView.GestureRecognizers>
@@ -71,8 +61,8 @@
                 <Label Text="Configuraciones Sensores" FontAttributes="Bold" FontSize="20" TextColor="#ff9000"/>
             </StackLayout>
         </ContentView>
-        
-        <ContentView Grid.Column="0" Grid.Row="5" Padding="0" Margin="40,40,10,10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+
+        <ContentView Grid.Column="0" Grid.Row="7" Padding="0" Margin="40,40,10,10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
             <ContentView.GestureRecognizers>
                 <TapGestureRecognizer Command="{Binding IrCerrarSesiorcommand}"/>
             </ContentView.GestureRecognizers>

@@ -1,5 +1,6 @@
 ﻿using MenuHamburguesa.Views;
 using MenuHamburguesa.Views.Pantallas;
+using MenuHamburguesa.Views.PantallasMenuHamburgesa;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
